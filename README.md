@@ -17,4 +17,4 @@ Auraline is an interactive application exploring the intersection of psychology,
 
 ---
 ## Documentation & Journals
-*   [Development Journal](Documents/Development_Commentary.md)
+*   [Development Journal](Documents/DevelopmentCommentary.md)
