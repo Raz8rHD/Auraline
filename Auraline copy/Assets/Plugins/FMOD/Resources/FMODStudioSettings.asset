@@ -453,8 +453,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../p1/p1.fspro
-  sourceBankPath: ../p1/Build
+  sourceProjectPath: ../../../../Desktop/p1/p1.fspro
+  sourceBankPath: ../../../../Desktop/p1/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -491,7 +491,7 @@ MonoBehaviour:
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131849
-  HideSetupWizard: 0
+  HideSetupWizard: 1
   LastEventReferenceScanVersion: 131849
   Platforms:
   - {fileID: -2513807023428729974}
