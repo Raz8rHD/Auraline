@@ -1,6 +1,6 @@
 # Auraline: Interactive Audio-Visual Synthesis
 
-**Developer:** Raz8rHD  
+**Developer:** Andrei-David Didu 
 **Platform:** macOS (MacBook Air)  
 **Engine:** Unity + FMOD
 
