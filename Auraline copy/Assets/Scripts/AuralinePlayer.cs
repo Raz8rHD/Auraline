@@ -329,7 +329,7 @@ public class AuralineController : MonoBehaviour, IPointerDownHandler
     {
         if (!IsMachineFullyPowered || tutorialState < 2 || _isWaitingForNextTrack) return;
 
-        currentTrackIndex = (currentTrackIndex + 1) % 4;
+        currentTrackIndex = (currentTrackIndex + 1) % 5;
         RuntimeManager.StudioSystem.setParameterByName("TrackSelector", (float)currentTrackIndex);
     }
 

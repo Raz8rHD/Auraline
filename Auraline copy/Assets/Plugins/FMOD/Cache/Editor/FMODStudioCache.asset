@@ -34,9 +34,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/track 2
+  m_Name: event:/Track 2
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/track 2
+  Path: event:/Track 2
   Guid:
     Data1: -1818798464
     Data2: 1075940839
@@ -85,9 +85,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/track 3
+  m_Name: event:/Track 3
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/track 3
+  Path: event:/Track 3
   Guid:
     Data1: -1450882063
     Data2: 1163465058
@@ -141,10 +141,10 @@ MonoBehaviour:
   Path: ../../../../Desktop/p1/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639137960654439765
+  lastModified: 639143674704224201
   FileSizes:
   - Name: Desktop
-    Value: 6981600
+    Value: 8467360
   Exists: 1
 --- !u!114 &-3333292280328003217
 MonoBehaviour:
@@ -156,9 +156,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/track 1
+  m_Name: event:/Track 1
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/track 1
+  Path: event:/Track 1
   Guid:
     Data1: 1493843961
     Data2: 1147505880
@@ -218,6 +218,7 @@ MonoBehaviour:
   - {fileID: 966589981179082997}
   - {fileID: -4990372499285642214}
   - {fileID: -3333292280328003217}
+  - {fileID: 2760599286491900085}
   EditorParameters:
   - {fileID: 5554468669568480125}
   - {fileID: -4728990601186713988}
@@ -226,18 +227,20 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 3039558014040312173}
   cacheVersion: 131859
-  cacheTime: 639137960654448188
+  cacheTime: 639143674704235242
   SerializableEventsDict:
   - key: event:/Auraline_Master
     index: 0
-  - key: event:/track 2
+  - key: event:/Track 2
     index: 1
-  - key: event:/track 4
+  - key: event:/Track 4
     index: 2
-  - key: event:/track 3
+  - key: event:/Track 3
     index: 3
-  - key: event:/track 1
+  - key: event:/Track 1
     index: 4
+  - key: event:/Track 5
+    index: 5
 --- !u!114 &514134277656569703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,9 +275,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/track 4
+  m_Name: event:/Track 4
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
-  Path: event:/track 4
+  Path: event:/Track 4
   Guid:
     Data1: -1175066744
     Data2: 1162627459
@@ -313,6 +316,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &2760599286491900085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Track 5
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Track 5
+  Guid:
+    Data1: 13637640
+    Data2: 1138799712
+    Data3: 524981677
+    Data4: 1245548497
+  Banks:
+  - {fileID: -4533248305172222491}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50526
 --- !u!114 &2966458238391489133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,10 +382,10 @@ MonoBehaviour:
   Path: ../../../../Desktop/p1/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639137960654448188
+  lastModified: 639143674704235242
   FileSizes:
   - Name: Desktop
-    Value: 1274
+    Value: 1306
   Exists: 1
 --- !u!114 &4164323381014792760
 MonoBehaviour:
@@ -372,7 +402,7 @@ MonoBehaviour:
   Name: TrackSelector
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 4
   Default: 0
   ID:
     data1: 1280145251
@@ -396,7 +426,7 @@ MonoBehaviour:
   Name: TrackSelector
   StudioPath: parameter:/TrackSelector
   Min: 0
-  Max: 3
+  Max: 4
   Default: 0
   ID:
     data1: 1280145251
