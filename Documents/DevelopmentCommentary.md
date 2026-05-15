@@ -107,7 +107,7 @@ The Unity documentation provided the absolute structural blueprint required to b
 
 ---
 
-#### 3. [Tsugi DSP Action Product Suite](https://tsugi-studio.com/web/en/products-dspaction.html)
+#### 3. [Tsugi DSP Action Product Suite](https://tsugi-studio.com/web/en/products-dspmotion.html)
 Developed by **Tsugi Studio**, a Tokyo-based leader in procedural game audio tools, this professional sound design suite is highly respected for its ability to synthesize complex sound effects in real-time based on live user gestures. This product was uniquely valuable to Auraline because it provided a validated commercial proof-of-concept demonstrating how hand velocity, stroke angles, and coordinate vectors can act as fluid, expressive sound modifiers.
 
 * **Gestural Interactivity:** Analyzed Tsugi's core workflow of utilizing a 2D "Sketch Pad" where the position, acceleration, and cross-line interactions of a drawing tool drive audio variations rather than triggering pre-recorded, repetitive wave samples.
