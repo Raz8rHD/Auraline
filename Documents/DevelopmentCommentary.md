@@ -115,7 +115,10 @@ Developed by **Tsugi Studio**, a Tokyo-based leader in procedural game audio too
 * **Visual-Audio Cohesion:** Evaluated their method of maintaining real-time video and graphic synchronization to see how visual feedback loop designs can subconsciously enhance the feel of an auditory interface.
 
 DSP Action was highly influential in defining Auraline’s user interaction loop. It proved that mapping user-drawn vector coordinates directly to real-time modulation curves results in a highly expressive and intuitive tool that prevents user ear fatigue. Observing Tsugi's implementation directly inspired Auraline's shift away from generic button-pushing interfaces toward a continuous, fluid drawing workspace that prioritizes physical motion.
-![Documents](Documents/ResearchPictures/Screenshot%202026-05-15%20at%2023.40.51.png)
+
+![Screenshot](./ResearchPictures/Screenshot%202026-05-15%20at%2023.40.51.png)
+
+*Figure 2. Tsugi DSP Motion user interface demonstrating the gestural drawing-to-sound workflow, where mouse or tablet vector inputs map directly to procedural audio synthesis and real-time visual synchronization.*
 
 ---
 
