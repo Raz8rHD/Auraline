@@ -62,14 +62,14 @@ In shaping the technical direction and sensory interaction of **Auraline**, the 
 ### Architectural Design and Complexity Management
 To ensure a clean, decoupled, and highly performant C# architecture, the project relied heavily on optimization blueprints aimed at reducing systemic complexity. Managing this data flow is a baseline necessity when mapping real-time, interactive 2D coordinates onto 3D surfaces while simultaneously driving dynamic middleware sound parameters. As industry systems designers emphasize, the failure to decouple graphic loops from audio execution pipelines leads to catastrophic performance bottlenecks. Technical author Robert Nystrom highlights this concept in *Game Programming Patterns*:
 
-> "Decoupling components ensures that game systems can evolve and execute independently without rippling performance flaws across unrelated domains." (Nystrom, 2014)
+> "Decoupling components ensures that game systems can evolve and execute independently without rippling performance flaws across unrelated domains." [(Nystrom, 2014)](https://gameprogrammingpatterns.com/component.html)
 
 By adhering to strictly modular engineering patterns, Auraline isolates its visual material calculations from its active audio buses, guaranteeing consistent runtime frames.
 
 ### Up-to-Date Engine and Middleware Integration
 For platform-specific implementation, the project prioritized official, first-party documentation released directly by **Unity Technologies** and **Firelight Technologies** over unofficial, third-party tutorials. Because both game engines and audio middleware packages undergo rapid API transformations, older community guides frequently rely on deprecated lifecycle methods, tightly coupled references, and unoptimized logic. This issue is widely acknowledged within the development community, with engine programmers stating on community forums that:
 
-> "Legacy, community-made integration tutorials are hopelessly broken due to massive core architecture rewrites, and authors rarely update their source material to reflect updated node or script behavior." (Unity Developer Forum, 2024)
+> "Legacy, community-made integration tutorials are hopelessly broken due to massive core architecture rewrites, and authors rarely update their source material to reflect updated node or script behavior." [(Unity/FMOD Developer Forum, 2024)](https://qa.fmod.com/t/lots-of-warnings-in-unity-6-2/23701)
 
 To protect the development workflow from console pollution and compile-time failures—such as the known FMOD `TreeView` deprecation warnings on newer engine versions—the project leaned strictly on official samples. This ensured that features like memory-safe coroutines and event-driven data tracking function seamlessly on a portable **macOS (MacBook Air)** development environment.
 
