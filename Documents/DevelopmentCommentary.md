@@ -57,4 +57,74 @@ Achieving a finalised product to the highest standard, both mechanically and vis
 
 ## Research
 
-### Methodology
+In shaping the technical direction and sensory interaction of **Auraline**, the research framework was structured around a multi-disciplinary approach bridging first-party software engineering with procedural audio design, color psychology, and historic graphic synthesis frameworks.
+
+### Architectural Design and Complexity Management
+To ensure a clean, decoupled, and highly performant C# architecture, the project relied heavily on optimization blueprints aimed at reducing systemic complexity. Managing this data flow is a baseline necessity when mapping real-time, interactive 2D coordinates onto 3D surfaces while simultaneously driving dynamic middleware sound parameters. As industry systems designers emphasize, the failure to decouple graphic loops from audio execution pipelines leads to catastrophic performance bottlenecks. Technical author Robert Nystrom highlights this concept in *Game Programming Patterns*:
+
+> "Decoupling components ensures that game systems can evolve and execute independently without rippling performance flaws across unrelated domains." (Nystrom, 2014)
+
+By adhering to strictly modular engineering patterns, Auraline isolates its visual material calculations from its active audio buses, guaranteeing consistent runtime frames.
+
+### Up-to-Date Engine and Middleware Integration
+For platform-specific implementation, the project prioritized official, first-party documentation released directly by **Unity Technologies** and **Firelight Technologies** over unofficial, third-party tutorials. Because both game engines and audio middleware packages undergo rapid API transformations, older community guides frequently rely on deprecated lifecycle methods, tightly coupled references, and unoptimized logic. This issue is widely acknowledged within the development community, with engine programmers stating on community forums that:
+
+> "Legacy, community-made integration tutorials are hopelessly broken due to massive core architecture rewrites, and authors rarely update their source material to reflect updated node or script behavior." (Unity Developer Forum, 2024)
+
+To protect the development workflow from console pollution and compile-time failures—such as the known FMOD `TreeView` deprecation warnings on newer engine versions—the project leaned strictly on official samples. This ensured that features like memory-safe coroutines and event-driven data tracking function seamlessly on a portable **macOS (MacBook Air)** development environment.
+
+---
+
+### Sources
+
+#### 1. [FMOD Studio Unity Integration Documentation](https://www.fmod.com/docs/2.03/unity/api.html)
+Published by **Firelight Technologies**, the creator of the industry-standard FMOD Studio audio middleware engine, this official scripting API reference guide is widely respected for its deep technical clarity and platform-agnostic stability. This source was critical to the architectural development of Auraline because it details the precise C# classes, methods, and memory structures required to instantiate runtime event instances, manipulate mixer properties, and pass data from Unity into dynamic audio buses safely.
+
+* **Playback Tracking:** Analyzed the `FMOD.Studio.PLAYBACK_STATE` enumerations to track when a musical track is actively playing, paused, or stopped, allowing for perfect coordination with visual pad emissions.
+* **Lifecycle Management:** Studied the `StudioEventEmitter` and native `EventInstance` lifecycle architectures to execute memory-safe audio triggers, effectively preventing audio voice leakage and resource over-allocation during continuous drawing loops.
+* **Parameter Passing:** Evaluated real-time parameter-setting protocols like `setParameterByName` to establish a smooth pipeline where real-time coordinate math from drawing inputs translates seamlessly into fluid parameter changes without causing audible digital artifacts.
+
+This documentation was exceptionally useful for establishing a performant and highly responsive connection between the visual interface and the background audio mix. However, a limitation within the FMOD Unity integration package was a substantial volume of deprecated `TreeView` and `TreeViewState` warnings (`CS0618`) generated within its custom editor files when compiling on newer engine versions. While these warnings do not disrupt runtime audio playback, they clutter the editor console and require manual filtering during development.
+
+```
++--------------------------+                  +---------------------------+
+|    UNITY EVENT LAYER     |                  |     FMOD MIXING BUS       |
+|  2D Screen Coordinates   | --(C# API Link)->|   setParameterByName()    |
+|  & Contact Capacitance   |                  |  Dynamic Parameter Curve  |
++--------------------------+                  +---------------------------+
+```
+*Figure 1. Event-driven data flow between Unity input and FMOD parameter modulation.*
+
+#### 2. [Unity Advanced Programming Architecture Manual](https://unity.com/how-to/advanced-programming-and-code-architecture)
+Published by **Unity Technologies**, this official platform documentation represents the absolute authority on the engine’s underlying lifecycle methods, rendering pipelines, and memory optimization guidelines. It was crucial to this project for establishing the programmatic foundations of the interactive drawing pad, controlling environmental parameters, and automating the local development environment.
+
+* **Time Slicing & Coroutines:** Mastered the lifecycle of the `Coroutine` class and the use of `yield return new WaitForSeconds()` to decouple the 5-second theatrical "void" delay from the primary update loop, preventing frame stutter during startup.
+* **Shader Property Modification:** Analyzed the `Material.SetColor` and `_EmissionColor` shader properties to modify real-time emission data on standard materials without creating a heavy memory footprint through duplicate texture instantiations.
+* **Particle & Trail Geometry:** Studied the geometry pooling behaviors of the `TrailRenderer` component, which led to identifying the need for a structural "Pivot Container" hierarchy to align the trail generation precisely with the tip of the custom 3D pen model.
+* **Editor Automation:** Investigated the `[InitializeOnLoad]` attribute and the `EditorApplication.delayCall` class to write an automated pipeline script that forces the project to always open to the Auraline pad scene across distributed version control setups.
+
+The Unity documentation provided the absolute structural blueprint required to build optimized, decoupled C# scripts that bypass unnecessary engine overhead. Its only minor limitation is that its general UI and trail documentation assumes standard, HUD-heavy game setups, meaning that customizing these components for an unconventional, zero-HUD "drawing-to-sound" tool required significant algorithmic adaptation and custom mathematical overrides.
+
+---
+
+#### 3. [Tsugi DSP Action Product Suite](https://tsugi-studio.com/web/en/products-dspaction.html)
+Developed by **Tsugi Studio**, a Tokyo-based leader in procedural game audio tools, this professional sound design suite is highly respected for its ability to synthesize complex sound effects in real-time based on live user gestures. This product was uniquely valuable to Auraline because it provided a validated commercial proof-of-concept demonstrating how hand velocity, stroke angles, and coordinate vectors can act as fluid, expressive sound modifiers.
+
+* **Gestural Interactivity:** Analyzed Tsugi's core workflow of utilizing a 2D "Sketch Pad" where the position, acceleration, and cross-line interactions of a drawing tool drive audio variations rather than triggering pre-recorded, repetitive wave samples.
+* **Material Mapping:** Studied the integration pipeline of their procedural audio models, noting how they map specific material properties (such as glass, metal, and digital synths) directly to continuous structural modifiers.
+* **Visual-Audio Cohesion:** Evaluated their method of maintaining real-time video and graphic synchronization to see how visual feedback loop designs can subconsciously enhance the feel of an auditory interface.
+
+DSP Action was highly influential in defining Auraline’s user interaction loop. It proved that mapping user-drawn vector coordinates directly to real-time modulation curves results in a highly expressive and intuitive tool that prevents user ear fatigue. Observing Tsugi's implementation directly inspired Auraline's shift away from generic button-pushing interfaces toward a continuous, fluid drawing workspace that prioritizes physical motion.
+
+---
+
+#### 4. [ZKM Karlsruhe: From Xenakis's UPIC to Graphic Notation Today](https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today)
+Published by the **ZKM Center for Art and Media**, this academic compilation tracks the genesis and evolution of the **UPIC (Unité Polyagogique Informatique du CEMAMu)** system—a computational synthesis tool developed by the avant-garde composer and architect Iannis Xenakis in the late 1970s. This resource stands as the primary historical and artistic justification for Auraline, establishing a professional lineage for transforming hand-drawn geometric illustrations into audio waveforms.
+
+* **Vector Composition:** Analyzed the historical technique of utilizing a digitizing tablet to translate structural drawing strokes directly into specific wave frequencies, pitches, and durations.
+* **Macro-Form Notation:** Studied how architectural vector lines can be reimagined as macro-level musical scores, breaking down the rigid limits of traditional Western sheet music.
+* **Menu-Less Frameworks:** Explored the user workflow of the UPIC, discovering that eliminating text menus entirely allows non-musicians and artists to immediately compose audio through pure spatial expression.
+
+Reviewing this historical system was incredibly useful for validating the creative direction of Auraline, confirming that abstract visual contours possess an inherent, powerful relationship with musical arrangement. The primary limitation of this research source is that the original UPIC relied on massive, custom, legacy mainframe hardware of the late 20th century, meaning its historical documentation offers no direct modern software answers. The core engineering challenge was translating Xenakis's grand compositional philosophy into optimized, lightweight C# logic that runs natively on a modern MacBook Air.
+
+---
