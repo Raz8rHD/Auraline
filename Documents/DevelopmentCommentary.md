@@ -310,7 +310,7 @@ void HandleTouch()
 
 As the core song catalog of **Auraline** expanded beyond the initial single-track proof of concept, maintaining completely independent master events for each track created significant workflow clutter inside both the Unity editor and the FMOD project hierarchy. To manage this scalability challenge without abandoning my decoupled C# framework, the audio pipeline was restructured to utilize parent-child nesting via event instruments.
 
-According to the official [FMOD Studio Instruments Manual: Nested Events](https://www.fmod.com/docs/2.03/studio/working-with-instruments.html#nested-events), nested events provide an elegant structural solution:
+According to the official [FMOD Studio Instruments Manual: Nested Events](https://www.fmod.com/docs/2.03/studio/authoring-events.html#nested-events), nested events provide an elegant structural solution:
 > *"Some referenced events are nested events. Unlike other events, nested referenced events do not appear in the routing browser and cannot be played at runtime except by playing their parent events... The main benefit of nested referenced events is that they do not clutter the routing browser and the browsers of your game editor."*
 
 By creating a singular parent event (e.g., `event:/p1/Auraline_Master`), each individual song loop was implemented as an internal **Event Instrument** embedded directly onto separate tracks within the parent timeline. By default, FMOD allows parameter controls to be exposed recursively up to the parent event, meaning our pre-existing mapping structures for spatial drawing tracking could remain unified under a single control system.
