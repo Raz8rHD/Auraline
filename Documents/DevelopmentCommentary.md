@@ -148,6 +148,26 @@ This research was incredibly valuable for calibrating the math behind Auraline's
 
 ### Visual Representaion Of Auraline
 
+---
+
 I kicked off development by bridging the gap between tactile performance and fluid, visual sound synthesis. The goal was to establish a clear visual blueprint before diving into Unity, resulting in the Auraline AP-10 concept mock-up. I have asked Gemini to generate a 2D model of a drum pad with a screen used to for drawing and modifying sounds. This was the result:
 
-![Picture](./DevelopmentPictures/Screenshot%202026-05-15%20at%2023.40.51.png)
+![Picture](./DevelopmentPictures/Gemini_Generated_Image_3qjcci3qjcci3qjc-2.png)
+
+*Figure 3. Auraline AP-10 user interface demonstrating the hybrid tactile triggering and gestural drawing-to-sound workflow, where vector-based screen inputs map directly to procedural modulation envelopes and real-time visual spectrum synchronization.*
+
+This high-fidelity mock-up serves as my definitive UI anchor, defining the spatial layout, color-coded parameter feedback, and asset requirements before turning the canvas into a 3D model in Unity.
+
+---
+
+### Using Pro Builder
+
+While Unity’s primitive 3D shapes worked for a basic block-out, they quickly became a bottleneck for the **Auraline** chassis. Fabricating the recessed screen, sloped panel indents, and edge bevels by nesting and scaling dozens of separate primitive GameObjects cluttered the hierarchy and restricted our texture mapping.
+
+Switching to **ProBuilder** directly within Unity streamlined the pipeline:
+
+* **In-Editor Modeling:** I will be able to sculpt the custom hardware casing and screen cavities directly in the scene view, avoiding the friction of shifting to external 3D software.
+* **Optimized Meshes:** ProBuilder combines complex geometry into a single, clean mesh, drastically reducing GameObject bloat.
+* **Granular UV Control:** This was crucial for mapping the detailed interface textures onto the hardware precisely without stretching.
+
+Transitioning to ProBuilder allowed me to quickly iterate on the physical form of the drum pad while keeping the project structure clean and optimized.
