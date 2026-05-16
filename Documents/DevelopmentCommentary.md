@@ -567,6 +567,3 @@ To ensure a seamless playback experience, the control pipeline was re-architecte
 * **Bootup Callback Separation:** The cold-start sequence was completely isolated from standard toggle inputs. The initial click flips a private flag (`_hasStartedBootup = true`), and the `.start()` command is safely deferred to a dedicated `CompleteBootup()` callback that triggers only *after* the hardware startup timer has fully finished.
 
 ---
-
-
-
