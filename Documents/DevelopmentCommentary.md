@@ -170,4 +170,36 @@ Switching to **ProBuilder** directly within Unity streamlined the pipeline:
 * **Optimized Meshes:** ProBuilder combines complex geometry into a single, clean mesh, drastically reducing GameObject bloat.
 * **Granular UV Control:** This was crucial for mapping the detailed interface textures onto the hardware precisely without stretching.
 
-Transitioning to ProBuilder allowed me to quickly iterate on the physical form of the drum pad while keeping the project structure clean and optimized.
+Transitioning to ProBuilder allowed me to quickly iterate on the physical form of the drum pad while keeping the project structure clean and optimized. Through images, below I will display the process of modelling the interface.
+
+![Picture](./DevelopmentPictures/unnamed.jpg)
+
+*Figure 4. Using ProBuilder to define the initial 3D slab for the chassis, establishing the hardware footprint and edge profile directly in the Unity scene view.*
+
+---
+
+![Picture](./DevelopmentPictures/buttonsadded.png)
+
+*Figure 5. Populating the right side of the interface with a precise 4x5 grid array of physical performance pads, establishing the tactile control zone.*
+
+---
+
+![Picture](./DevelopmentPictures/buttonsglowing.jpg)
+
+*Figure 6. Testing a high-intensity magenta emissive material on a single pad to calibrate baseline bloom, lighting behavior, and visual feedback constraints.*
+
+---
+
+![Picture](./DevelopmentPictures/chasis.jpg)
+
+*Figure 7. Expanding the emissive material passes across the entire grid, implementing color-coded rows to visually categorize instrument groups and parameter states.*
+
+---
+
+![Picture](./DevelopmentPictures/screen.png)
+
+*Figure 8. Utilizing ProBuilder's face editing to extrude and bevel the left side of the chassis inward, creating the finalized, matte hardware cavity dedicated to the drawing interface.*
+
+---
+
+## FMOD Implementation In Unity
