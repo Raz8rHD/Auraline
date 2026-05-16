@@ -141,3 +141,11 @@ This highly cited peer-reviewed paper by Dr. Charles Spence, head of the Crossmo
 * **Implicit UX Design Frameworks:** Investigated how leveraging pre-existing cross-modal connections reduces cognitive load, showing that building an interactive interface around natural sensory expectations removes the need for explicit text-based instructions or a cluttered HUD.
 
 This research was incredibly valuable for calibrating the math behind Auraline's interactive drawing board, ensuring that data sent from Unity's 2D space maps to FMOD parameters in a way that feels instantly intuitive to the user. By basing the interaction logic on established cognitive science, the system achieves a true "Zero-UI" flow where the interface feels natural from the first stroke. The primary limitation of this paper is its focus on controlled laboratory testing rather than live digital tools, meaning its insights had to be manually translated into real-time C# scaling algorithms and continuous FMOD modulation curves.
+
+---
+
+## Implementation
+
+### Visual Representaion Of Auraline
+
+I kicked off development by bridging the gap between tactile performance and fluid, visual sound synthesis. The goal was to establish a clear visual blueprint before diving into Unity, resulting in the Auraline AP-10 concept mock-up. I have asked Gemini to generate a 2D model of a drum pad with a screen used to for drawing and modifying sounds. This was the result:
