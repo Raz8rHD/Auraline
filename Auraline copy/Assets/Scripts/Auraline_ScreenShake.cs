@@ -49,6 +49,11 @@ public class Auraline_ScreenShake : MonoBehaviour
 
     void Awake()
     {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
         _instance     = this;
         _beatCallback = new FMOD.Studio.EVENT_CALLBACK(OnBeat);
     }
@@ -121,6 +126,7 @@ public class Auraline_ScreenShake : MonoBehaviour
         if (_registeredInstance.isValid())
             _registeredInstance.setCallback(null, CallbackMask);
 
-        _instance = null;
+        if (_instance == this)
+            _instance = null;
     }
 }
