@@ -338,6 +338,10 @@ Transitioning to a nested event architecture streamlined the development workflo
 * **Encapsulated Sub-Mixing:** Routing child events directly through the parent channel strip enables a unified master effects chain. This centralized routing streamlines acoustic optimization, ensuring consistent loudness thresholds and compression profiles across all tracks automatically.
 * **Unified Parameter Routing:** Because parameters are recursively inherited by the parent event, the baseline coordinate-mapping scripts required zero structural rewrites. The C# layer continues communicating directly with the master instance, while FMOD seamlessly delegates those telemetry inputs downstream to the active child timeline.
 
+![Picture](./Videos/fmodsetup.mov)
+
+*Figure 12. Nested multi-track event structure within FMOD Studio, where a global TrackSelector parameter dynamically crossfades between five distinct musical timelines routed into a unified master DSP modulation chain.*
+
 ---
 
 ### Advanced Multi-Parameter Modulation: Expanding the Sonic Palette
@@ -370,7 +374,7 @@ void CalculateVelocity()
     lastFrameMousePos  = currentMousePos;
 }
 ```
-*Figure 12. C# implementation of the gestural velocity tracking algorithm, where frame-to-frame pointer displacement scales drawing intensity to dynamically drive aggressive distortion parameters during real-time interaction.*
+*Figure 13. C# implementation of the gestural velocity tracking algorithm, where frame-to-frame pointer displacement scales drawing intensity to dynamically drive aggressive distortion parameters during real-time interaction.*
 
 ---
 
@@ -390,7 +394,7 @@ stereoWidth    = Mathf.Abs(xPct - 0.5f) * 2f;         // Evaluates total distanc
 pitchLevel     = Mathf.Lerp(-12f, 12f, xPct);         // Maps pitch shifts across horizontal bounds
 reverbLevel    = Mathf.Lerp(0f, 1f, yPct);            // Maps wet reverb levels along vertical axis
 ```
-*Figure 13. C# implementation of the expanded multi-parameter mapping matrix, where normalized screen bounds concurrently derive linear spatial panning, absolute center-distance stereo width, pitch shifting, and wet reverb modifiers.*
+*Figure 14. C# implementation of the expanded multi-parameter mapping matrix, where normalized screen bounds concurrently derive linear spatial panning, absolute center-distance stereo width, pitch shifting, and wet reverb modifiers.*
 
 Integrating this multi-parameter data architecture significantly elevated both the programmatic stability and the tactile feel of the instrument:
 
@@ -420,7 +424,7 @@ public void NextTrack()
     RuntimeManager.StudioSystem.setParameterByName("TrackSelector", (float)currentTrackIndex);
 }
 ```
-*Figure 14. C# implementation of the NextTrack execution logic within the master controller, where state-driven guard clauses protect playback transitions before piping a modulo-wrapped composition index directly to FMOD's global parameter manager.*
+*Figure 15. C# implementation of the NextTrack execution logic within the master controller, where state-driven guard clauses protect playback transitions before piping a modulo-wrapped composition index directly to FMOD's global parameter manager.*
 
 #### Encountered Issues & Debugging
 
@@ -487,7 +491,7 @@ public void ResetModulations()
     isNewStroke = true;
 }
 ```
-*Figure 15. C# implementation of the ResetModulations framework, where state-validated guard clauses trigger a local parameter rollback, force baseline defaults directly into the active FMOD instance, and completely flush the visual drawing canvas.*
+*Figure 16. C# implementation of the ResetModulations framework, where state-validated guard clauses trigger a local parameter rollback, force baseline defaults directly into the active FMOD instance, and completely flush the visual drawing canvas.*
 
 #### Encountered Issues & Debugging
 
@@ -549,7 +553,7 @@ public void TogglePlayback()
     }
 }
 ```
-*Figure 16. C# implementation of the TogglePlayback state machine, where FMOD API queries evaluate audio runtime states to handle cold-boot lighting routines, toggle active engine playback, and dynamically update the physical button's emissive glow.*
+*Figure 17. C# implementation of the TogglePlayback state machine, where FMOD API queries evaluate audio runtime states to handle cold-boot lighting routines, toggle active engine playback, and dynamically update the physical button's emissive glow.*
 
 #### Encountered Issues & Debugging
 
