@@ -205,9 +205,9 @@ Transitioning to ProBuilder allowed me to quickly iterate on the physical form o
 
 ---
 
-### FMOD Implementation In Unity
+## FMOD Implementation In Unity
 
-#### FMOD Event
+### FMOD Event
 
 When laying down the initial technical foundation for **Auraline**, the primary objective was to validate the core drawing-to-sound translation pipeline without adding the complexity of asset-heavy UI systems or dynamic track variations. The initial development scope focused entirely on an isolated system configuration: **one song loop housed inside a single, continuous audio event layer**.
 
@@ -216,7 +216,7 @@ According to the official [FMOD Studio Concepts Manual](https://www.fmod.com/doc
 
 In this early phase, a single event called `event:/p1` was created within FMOD Studio. This event contained the full multi-track layout of the baseline musical composition, controlled internally by continuous user parameters (e.g., `PitchShift` and `ReverbAmount`) rather than standard timeline cues.
 
-#### Linking Modulations via Drawing
+### Linking Modulations via Drawing
 
 Separating spatial calculations (`AuralineScreenInteraction`) from audio execution (`AuralineAudioManager`) was essential for creating a clean, high-performance drawing-to-sound pipeline. 
 
@@ -309,7 +309,7 @@ void HandleTouch()
 
 ---
 
-#### FMOD Nested Events
+### FMOD Nested Events
 
 As the core song catalog of **Auraline** expanded beyond the initial single-track proof of concept, maintaining completely independent master events for each track created significant workflow clutter inside both the Unity editor and the FMOD project hierarchy. To manage this scalability challenge without abandoning my decoupled C# framework, the audio pipeline was restructured to utilize parent-child nesting via event instruments.
 
@@ -340,7 +340,7 @@ Transitioning to a nested event architecture streamlined the development workflo
 
 ---
 
-#### Advanced Multi-Parameter Modulation: Expanding the Sonic Palette
+### Advanced Multi-Parameter Modulation: Expanding the Sonic Palette
 
 To evolve **Auraline** from a simple melodic generator into a highly expressive, tactile instrument, the synthesis engine was expanded beyond basic pitch variations and static reverb. By introducing **spatial panning**, **stereo width**, and **distortion** (through drawing intensity), the soundscape reacts not just to *where* the user draws, but *how* they draw.
 
@@ -399,9 +399,9 @@ Integrating this multi-parameter data architecture significantly elevated both t
 
 ---
 
-### Updating The Interface
+## Updating The Interface
 
-#### Next Track Button
+### Next Track Button
 
 A physical "Next Track" button was introduced using a specialized physical console pad layout. The design goal was simple: allow the user to seamlessly cycle through the application's 5 distinct musical tracks at any time without stopping the audio engine or interrupting the drawing workflow, creating a continuous, uninterrupted live performance loop.
 
@@ -435,3 +435,74 @@ To restore reliable track switching, the architecture was modified through a two
 
 * **FMOD Scope Realignment:** The `TrackSelector` configuration inside FMOD Studio was switched from a local property to an explicit **Global** parameter. This instantly enabled the underlying sound mix to respond to Unity's global scripting API broadcasts.
 * **State Logic Optimization:** The validation checks within the `NextTrack()` method were refactored to work cleanly alongside the application's startup state. Integrating the explicit `_isWaitingForNextTrack` coroutine flag allows the interface to safely manage rapid user taps without dropping inputs or breaking the user's tutorial flow.
+
+---
+
+### Reset Modulation Button 
+
+As users draw on **Auraline**, continuous multi-parameter adjustments (reverb, pitch shift, spatial panning, width, and velocity overdrive) alter the active audio track. To prevent the mix from becoming muddy or overwhelmed by chaotic frequency stacking and visual clutter, a physical "Reset" drum pad was introduced. The goal was to provide a distinct "clean slate" mechanism that instantly restores all digital signal processing (DSP) filters to their baseline configurations and purges all drawn line paths from the interactive canvas. This reset functionality also serves as the critical step 1 onboarding checkpoint within the game's text-free tutorial flow.
+
+The reset logic is governed by `ResetModulations()` within `AuralineController.cs`. When triggered, the method forcefully overrides local variables, flushes parameters directly to the active event instance pipeline, and destroys visual path generation objects:
+
+```csharp
+public void ResetModulations()
+{
+    // Guard clause: Block resets if power is off or before the tutorial prompts it
+    if (!IsMachineFullyPowered || tutorialState < 1) return;
+
+    // 1. Reset all local parameter variables to base defaults
+    pitchLevel       = 0f;
+    reverbLevel      = 0f;
+    drawingIntensity = 0f;
+    spatialPanning   = 0.5f;
+    stereoWidth      = 0f;
+
+    // 2. Direct instance handshake: Force parameters into the active FMOD event
+    if (musicInstance.isValid())
+    {
+        musicInstance.setParameterByName("PitchShift",       0f);
+        musicInstance.setParameterByName("ReverbAmount",     0f);
+        musicInstance.setParameterByName("DrawingIntensity", 0f);
+        musicInstance.setParameterByName("SpatialPanning",   0.5f);
+        musicInstance.setParameterByName("StereoWidth",      0f);
+    }
+
+    // 3. Visual Canvas Purge
+    if (drawingLine != null)
+    {
+        drawingLine.positionCount = 0;
+        drawingLine.enabled = false;
+    }
+
+    // Clear dynamic trail objects
+    foreach (var stroke in allStrokes)
+    {
+        if (stroke != null && stroke != drawingLine)
+        {
+            Destroy(stroke.gameObject);
+        }
+    }
+    allStrokes.Clear();
+    currentStroke = null;
+    isNewStroke = true;
+}
+```
+*Figure 15. C# implementation of the ResetModulations framework, where state-validated guard clauses trigger a local parameter rollback, force baseline defaults directly into the active FMOD instance, and completely flush the visual drawing canvas.*
+
+#### Encountered Issues & Debugging
+
+During integration testing, triggering the reset mechanism updated the user interface but left two critical bugs affecting both audio stability and rendering performance:
+
+* **Hanging Audio Modulations (DSP Freezing):** Upon releasing the drawing interface, the active audio filters remained stuck at their last driven thresholds (e.g., reverb trails freezing at maximum wetness). This occurred because parameters were updated only while active touch telemetry was stream-fed; on release, the input stream paused, leaving FMOD holding the last frame's floating-point values indefinitely.
+* **Ghost Stroke Geometry Buildup:** Resetting the template line renderer (`drawingLine.positionCount = 0`) only cleared the path currently in progress. Because the drawing system was upgraded to support multiple distinct brush lines, previously completed lines that had been instantiated onto unique GameObjects bypassed this basic cleanup, lingering in the 3D scene and causing steady frame drops over time.
+
+#### Resolution
+
+To ensure a seamless visual and acoustic reset, the cleanup workflow was refactored with two explicit routines inside `AuralineController.cs`:
+
+* **Forced Instance Parameter Flushes:** Rather than relying on conditional update loops, the `ResetModulations()` method was updated to push a hardcoded block of baseline defaults ($0.0$ for audio effects, and a balanced $0.5$ for spatial panning) directly into the active `musicInstance` to immediately neutralize the DSP engine.
+* **Geometric Garbage Collection:** A reference tracking collection (`List<LineRenderer> allStrokes`) was introduced to monitor every active stroke generated on the canvas. On reset, the method iterates through this list, executes a `Destroy()` sequence on each instantiated stroke GameObject, flushes the list, and resets the path flag (`isNewStroke = true`) to clean the canvas and reclaim runtime memory.
+
+---
+
+### Play & Pause Music Button
