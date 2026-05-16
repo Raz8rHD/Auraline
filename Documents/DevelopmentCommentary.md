@@ -403,3 +403,35 @@ Integrating this multi-parameter data architecture significantly elevated both t
 
 #### Next Track Button
 
+A physical "Next Track" button was introduced using a specialized physical console pad layout. The design goal was simple: allow the user to seamlessly cycle through the application's 5 distinct musical tracks at any time without stopping the audio engine or interrupting the drawing workflow, creating a continuous, uninterrupted live performance loop.
+
+The mechanical interaction is driven by the `NextTrack()` method inside `AuralineController.cs`. When a user touches the assigned drum pad, the script increments a modulo index tracker and hands the resulting integer off to FMOD's system engine. Below are the essential lines extracted from `NextTrackButton.cs` and `AuralineController.cs`:
+
+```csharp
+public void NextTrack()
+{
+    // Guard clause: Prevents track switching during bootup or restricted tutorial states
+    if (!IsMachineFullyPowered || tutorialState < 2 || _isWaitingForNextTrack) return;
+
+    // Increment track index smoothly across the 5 available compositions
+    currentTrackIndex = (currentTrackIndex + 1) % 5;
+
+    // Pipe the index directly up to FMOD's global parameter manager
+    RuntimeManager.StudioSystem.setParameterByName("TrackSelector", (float)currentTrackIndex);
+}
+```
+*Figure 14. C# implementation of the NextTrack execution logic within the master controller, where state-driven guard clauses protect playback transitions before piping a modulo-wrapped composition index directly to FMOD's global parameter manager.*
+
+#### Encountered Issues & Debugging
+
+During early integration testing, the Unity console successfully logged the track pad interaction and executed visual feedback, but the audio remained locked on the first song. This failure stemmed from two distinct integration defects:
+
+* **Parameter Scope Mismatch:** The C# script invoked `RuntimeManager.StudioSystem.setParameterByName()`, which broadcasts across FMOD's global parameter pipeline. However, the `TrackSelector` parameter inside FMOD Studio was configured as a **Local (Instance-based)** variable. Because of this scope mismatch, Unity's global calls were ignored by the local event instance.
+* **Aggressive State Guarding:** The validation logic gate `if (!IsMachineFullyPowered || tutorialState < 2 || _isWaitingForNextTrack) return;` was overly restrictive. It completely blocked track switching during the machine's initial bootup fade-in sequence and early onboarding phases, silently dropping user inputs.
+
+#### Resolution
+
+To restore reliable track switching, the architecture was modified through a two-fold fix:
+
+* **FMOD Scope Realignment:** The `TrackSelector` configuration inside FMOD Studio was switched from a local property to an explicit **Global** parameter. This instantly enabled the underlying sound mix to respond to Unity's global scripting API broadcasts.
+* **State Logic Optimization:** The validation checks within the `NextTrack()` method were refactored to work cleanly alongside the application's startup state. Integrating the explicit `_isWaitingForNextTrack` coroutine flag allows the interface to safely manage rapid user taps without dropping inputs or breaking the user's tutorial flow.
