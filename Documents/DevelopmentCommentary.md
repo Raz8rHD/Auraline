@@ -506,3 +506,67 @@ To ensure a seamless visual and acoustic reset, the cleanup workflow was refacto
 ---
 
 ### Play & Pause Music Button
+
+To support **Auraline's** text-free "Zero-UI" framework, the physical master Play/Pause button serves as the primary console interaction point. On initial launch, the application sits in a dark, atmospheric "theatrical void." Pressing the playback button triggers a five-second bootup sequence that fades up the hardware illumination arrays before activating the main audio track. 
+
+Once the machine is fully powered, the button acts as a responsive toggle to pause and resume the live soundtrack seamlessly at any point without disrupting the active performance workflow.
+
+The playback state machine is handled by the `TogglePlayback()` method inside `AuralineController.cs`. It directly queries FMOD's state machine to determine whether the system needs a cold boot initialization or a simple pause-state change:
+
+```csharp
+public void TogglePlayback()
+{
+    if (!musicInstance.isValid()) return;
+    if (_hasStartedBootup && !IsMachineFullyPowered) return; // Block input during initialization
+
+    // Fetch the raw playback state and pause configuration from the FMOD API
+    musicInstance.getPlaybackState(out FMOD.Studio.PLAYBACK_STATE state);
+    musicInstance.getPaused(out bool isPaused);
+
+    // If stopped or currently paused -> Transition to Playing
+    if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED || isPaused)
+    {
+        if (state == FMOD.Studio.PLAYBACK_STATE.STOPPED) 
+        {
+            if (!_hasStartedBootup)
+            {
+                _hasStartedBootup = true;
+                _startupTimer = startupDelay; // Fire theatrical 5-second lighting fade
+                return; 
+            }
+            musicInstance.start();
+        }
+        
+        musicInstance.setPaused(false); // Unpause audio stream safely
+        StartPlaybackVisuals();
+    }
+    else // If actively playing -> Transition to Paused
+    {
+        musicInstance.setPaused(true); // Suspend timeline without resetting playhead
+        isPlaying = false;
+        if (playButtonGlow != null)
+            playButtonGlow.UpdateVisuals(Auraline_ButtonGlow.ButtonState.Paused);
+    }
+}
+```
+*Figure 16. C# implementation of the TogglePlayback state machine, where FMOD API queries evaluate audio runtime states to handle cold-boot lighting routines, toggle active engine playback, and dynamically update the physical button's emissive glow.*
+
+#### Encountered Issues & Debugging
+
+During early integration testing, two critical failures were identified in the playback state machine:
+
+* **Timeline Reset on Resume (The Restart Bug):** Pausing and resuming a track caused the song to restart from the beginning rather than pick up where it left off. This occurred because the script executed `musicInstance.start()` on every interaction press; calling `.start()` on an active or suspended FMOD event inherently discards the current playhead position and resets the timeline to zero.
+* **Cold Start Input Dropping:** On the initial launch click, the audio occasionally failed to trigger entirely, leaving the system permanently silent. The script was attempting to execute `.start()` and `.setPaused(false)` on the exact same frame that asynchronous scene scripts clamped lighting variables to zero, causing a race condition between Unity's update loop and the FMOD mixer system.
+
+#### Resolution
+
+To ensure a seamless playback experience, the control pipeline was re-architected to explicitly differentiate between a timeline **Start** and an audio **Unpause**:
+
+* **State-Aware Conditional Gates:** The logic was updated to query both `getPlaybackState()` and `getPaused()` simultaneously. This dual-state check enables the system to detect whether an event is completely uninitialized (`STOPPED`) or merely suspended on the timeline (`isPaused`).
+* **Explicit Playhead Unfreezing:** The resume sequence was modified to call `musicInstance.setPaused(false)` instead of firing `.start()`. This commands the FMOD engine to unfreeze the existing timeline, preserving the active playhead metrics.
+* **Bootup Callback Separation:** The cold-start sequence was completely isolated from standard toggle inputs. The initial click flips a private flag (`_hasStartedBootup = true`), and the `.start()` command is safely deferred to a dedicated `CompleteBootup()` callback that triggers only *after* the hardware startup timer has fully finished.
+
+---
+
+
+
