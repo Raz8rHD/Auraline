@@ -308,7 +308,7 @@ void HandleTouch()
 
 #### FMOD Nested Events
 
-As the core song catalog of **Auraline** expanded beyond the initial single-track proof of concept, maintaining completely independent master events for each track created significant workflow clutter inside both the Unity editor and the FMOD project hierarchy. To manage this scalability challenge without abandoning our decoupled C# framework, the audio pipeline was restructured to utilize parent-child nesting via event instruments.
+As the core song catalog of **Auraline** expanded beyond the initial single-track proof of concept, maintaining completely independent master events for each track created significant workflow clutter inside both the Unity editor and the FMOD project hierarchy. To manage this scalability challenge without abandoning my decoupled C# framework, the audio pipeline was restructured to utilize parent-child nesting via event instruments.
 
 According to the official [FMOD Studio Instruments Manual: Nested Events](https://www.fmod.com/docs/2.03/studio/working-with-instruments.html#nested-events), nested events provide an elegant structural solution:
 > *"Some referenced events are nested events. Unlike other events, nested referenced events do not appear in the routing browser and cannot be played at runtime except by playing their parent events... The main benefit of nested referenced events is that they do not clutter the routing browser and the browsers of your game editor."*
