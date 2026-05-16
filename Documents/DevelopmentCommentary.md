@@ -149,3 +149,5 @@ This research was incredibly valuable for calibrating the math behind Auraline's
 ### Visual Representaion Of Auraline
 
 I kicked off development by bridging the gap between tactile performance and fluid, visual sound synthesis. The goal was to establish a clear visual blueprint before diving into Unity, resulting in the Auraline AP-10 concept mock-up. I have asked Gemini to generate a 2D model of a drum pad with a screen used to for drawing and modifying sounds. This was the result:
+
+![Picture](./DevelopmentPictures/Screenshot%202026-05-15%20at%2023.40.51.png)
