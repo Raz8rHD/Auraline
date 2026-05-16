@@ -203,3 +203,128 @@ Transitioning to ProBuilder allowed me to quickly iterate on the physical form o
 ---
 
 ### FMOD Implementation In Unity
+
+#### FMOD Event
+
+When laying down the initial technical foundation for **Auraline**, the primary objective was to validate the core drawing-to-sound translation pipeline without adding the complexity of asset-heavy UI systems or dynamic track variations. The initial development scope focused entirely on an isolated system configuration: **one song loop housed inside a single, continuous audio event layer**.
+
+According to the official [FMOD Studio Concepts Manual](https://www.fmod.com/docs/2.03/studio/fmod-studio-concepts.html), an **Event** is defined as:
+> *"An instanceable unit of sound content that can be triggered, controlled and stopped from game code. As a rule, every situation in your game that produces a sound should have a corresponding event."*
+
+In this early phase, a single event called `event:/p1` was created within FMOD Studio. This event contained the full multi-track layout of the baseline musical composition, controlled internally by continuous user parameters (e.g., `PitchShift` and `ReverbAmount`) rather than standard timeline cues.
+
+#### Linking Modulations via Drawing
+
+Separating spatial calculations (`AuralineScreenInteraction`) from audio execution (`AuralineAudioManager`) was essential for creating a clean, high-performance drawing-to-sound pipeline. 
+
+This decoupled architecture achieves a robust integration through three main advantages:
+
+* **Hardware-Agnostic Mapping:** Raycast hits are normalized to an invariant `0.0 to 1.0` range based on the ProBuilder mesh bounds rather than using raw screen vectors. This ensures that if the physical chassis is scaled, rotated, or modified later, the input tracking remains completely accurate without code recalibration.
+* **Low-Overhead DSP Pipeline:** Passing these normalized values directly into FMOD’s `setParameterByName` bypasses heavy intermediate calculations. This delivers highly efficient, sample-accurate runtime modulation over pitch and reverb directly within the native audio mixer.
+* **Synchronous Multi-Sensory Feedback:** Processing both the FMOD mixer states and the visual rendering variables (`currentSpeed`, `currentSmooth`) inside a unified frame loop eliminates perceived latency. The result is seamless synchronization between touch gestures, spectrum deformation, and audio modification.
+
+```csharp
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class AuralineTouchHandler : MonoBehaviour
+{
+    [Header("Screen References")]
+    [SerializeField] private Collider screenCollider;
+    [SerializeField] private Transform screenCursor;
+
+    [Header("Runtime Parameter Outputs")]
+    private float pitchLevel;
+    private float reverbLevel;
+
+    // Public properties to expose values to the Audio Manager
+    public float PitchLevel => pitchLevel;
+    public float ReverbLevel => reverbLevel;
+
+    private void Update()
+    {
+        // Continuously check for pointer interaction
+        if (Pointer.current != null && Pointer.current.press.isPressed)
+        {
+            HandleTouch();
+        }
+        else
+        {
+            // Hide cursor when interaction ceases
+            if (screenCursor != null && screenCursor.gameObject.activeSelf)
+            {
+                screenCursor.gameObject.SetActive(false);
+            }
+        }
+    }
+```
+*Figure 9. C# implementation of the AuralineTouchHandler component tracking real-time user gestures, where Unity's modern Input System polls active pointer pressure to safely manage cursor states and route coordinate data to the mixing pipeline.*
+
+---
+
+```csharp
+void HandleTouch()
+    {
+        Vector2 pointerPos = Pointer.current.position.ReadValue();
+        Ray ray = Camera.main.ScreenPointToRay(pointerPos);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            // This tells us exactly what we hit in the Console
+            Debug.Log("Auraline Raycast hit: " + hit.collider.gameObject.name);
+
+            // CHANGED: We check the GameObject now, which is safer
+            if (hit.collider.gameObject == screenCollider.gameObject)
+            {
+                if (screenCursor != null)
+                {
+                    screenCursor.gameObject.SetActive(true);
+                    screenCursor.position = hit.point + (hit.normal * 0.005f);
+                }
+
+                // Get the bounds of the collider we actually hit
+                Bounds b = hit.collider.bounds;
+                
+                // Calculate percentages (0 to 1)
+                float xPct = Mathf.Clamp01((hit.point.x - b.min.x) / b.size.x);
+                
+                // --- THE ORIENTATION FIX ---
+                // Try 'y' if your screen is vertical (like a wall)
+                // Try 'z' if your screen is horizontal (like a table)
+                float yPct = Mathf.Clamp01((hit.point.y - b.min.y) / b.size.y); 
+
+                pitchLevel = Mathf.Lerp(-12f, 12f, xPct);
+                reverbLevel = Mathf.Lerp(0f, 1f, yPct);
+                
+                Debug.Log($"Mapped Values: Pitch {pitchLevel:F1} | Reverb {reverbLevel:F1}");
+            }
+        }
+    }
+```
+*Figure 10. C# implementation of the HandleTouch algorithm handling spatial-to-parameter normalization, where 3D physics raycasting isolates the mesh bounds of the screen to translate surface coordinate percentages directly into mapped pitch and reverb modifiers.*
+
+---
+
+#### FMOD Nested Events
+
+As the core song catalog of **Auraline** expanded beyond the initial single-track proof of concept, maintaining completely independent master events for each track created significant workflow clutter inside both the Unity editor and the FMOD project hierarchy. To manage this scalability challenge without abandoning our decoupled C# framework, the audio pipeline was restructured to utilize parent-child nesting via event instruments.
+
+According to the official [FMOD Studio Instruments Manual: Nested Events](https://www.fmod.com/docs/2.03/studio/working-with-instruments.html#nested-events), nested events provide an elegant structural solution:
+> *"Some referenced events are nested events. Unlike other events, nested referenced events do not appear in the routing browser and cannot be played at runtime except by playing their parent events... The main benefit of nested referenced events is that they do not clutter the routing browser and the browsers of your game editor."*
+
+By creating a singular parent event (e.g., `event:/p1/Auraline_Master`), each individual song loop was implemented as an internal **Event Instrument** embedded directly onto separate tracks within the parent timeline. By default, FMOD allows parameter controls to be exposed recursively up to the parent event, meaning our pre-existing mapping structures for spatial drawing tracking could remain unified under a single control system.
+
+```mermaid
+graph TD
+    subgraph Unity [Unity Scene Lifecycle]
+        C[AuralineManager.cs] -->|Single Hook| P[Instance: Master Engine]
+    end
+    subgraph FMOD [FMOD Project Hierarchy]
+        P --> Track1[Track 1: Ambient Ambient]
+        P --> Track2[Track 2: Rhythm Sync]
+        Track1 --> NE1[Nested Event: Song Alpha]
+        Track2 --> NE2[Nested Event: Song Beta]
+    end
+```
+*Figure 11. Architectural routing diagram mapping Unity-to-FMOD integration, where a single master engine instance channels real-time manager data directly into parallel ambient and rhythmic sub-tracks.*
