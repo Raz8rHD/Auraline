@@ -1,9 +1,12 @@
 # Final Major Project
+
 ## Project Outline
+
 ---
+
 **Auraline** is an interactive audio-visual synthesis application built in **Unity** that bridges the gap between digital sound design and physical gesture. The project explores the intersection of psychology, visual art, and audio perception, focusing on how human beings process and interact with multisensory stimuli. While stylistically and technically inspired by historical systems like the [**Xenakis UPIC**](https://en.wikipedia.org/wiki/UPIC) and the [**Oramics Machine**](https://en.wikipedia.org/wiki/Oramics), the application eschews traditional, button-heavy interfaces in favor of a clean, gesture-based "drawing-to-sound" experience driven by the **FMOD** audio engine. A core feature is the implementation of a theatrical "Power-Up" sequence and reactive material emissions that provide immediate visual feedback for real-time audio modulation.
 
-For instance, the application utilizes a 2D interactive drum pad and a **"Ghost Pen"** tutorial system to guide users through the synthesis process. The pen leaves a dynamic trail as it follows a procedural mathematical path—specifically x=sin(time⋅speed)⋅width and y=cos(time⋅speed⋅0.5)⋅height—teaching the user the mechanics of the interface before they begin their own performance. Importantly, the system utilizes sequential visual "breadcrumbs," where elements like the **Reset** and **Next Track** buttons only fade into existence as the user requires them, prioritizing an immersive, minimal interface over traditional HUD-heavy layouts.
+For instance, the application utilizes a 2D interactive drum pad and a **"Ghost Pen"** tutorial system to guide users through the synthesis process. The pen leaves a dynamic trail teaching the user the mechanics of the interface before they begin their own performance. Importantly, the system utilizes sequential visual "breadcrumbs," where elements like the **Reset** and **Next Track** buttons only fade into existence as the user requires them, prioritizing an immersive, minimal interface over traditional HUD-heavy layouts.
 
 ---
 
@@ -328,3 +331,75 @@ graph TD
     end
 ```
 *Figure 11. Architectural routing diagram mapping Unity-to-FMOD integration, where a single master engine instance channels real-time manager data directly into parallel ambient and rhythmic sub-tracks.*
+
+Transitioning to a nested event architecture streamlined the development workflow through three key advantages:
+
+* **Minimized Memory Overhead:** Instead of continuously destroying and instantiating new `EventInstance` blocks at runtime—which risks memory fragmentation—Unity maintains a single parent instance. Track switching is handled efficiently via a global parameter (`TrackSelector`), safeguarding framerate stability on portable hardware like the MacBook Air.
+* **Encapsulated Sub-Mixing:** Routing child events directly through the parent channel strip enables a unified master effects chain. This centralized routing streamlines acoustic optimization, ensuring consistent loudness thresholds and compression profiles across all tracks automatically.
+* **Unified Parameter Routing:** Because parameters are recursively inherited by the parent event, the baseline coordinate-mapping scripts required zero structural rewrites. The C# layer continues communicating directly with the master instance, while FMOD seamlessly delegates those telemetry inputs downstream to the active child timeline.
+
+---
+
+#### Advanced Multi-Parameter Modulation: Expanding the Sonic Palette
+
+To evolve **Auraline** from a simple melodic generator into a highly expressive, tactile instrument, the synthesis engine was expanded beyond basic pitch variations and static reverb. By introducing **spatial panning**, **stereo width**, and **distortion** (through drawing intensity), the soundscape reacts not just to *where* the user draws, but *how* they draw.
+
+The audio engine uses three advanced parameters to continuously shape the track sub-mix based on live cursor or touch interactions:
+
+* **Kinetic Drive (`DrawingIntensity`):** Linked to an aggressive overdrive and wave-shaping module within FMOD. This parameter handles the grit and saturation of the synthesizer layer, scaling dynamically between $0.0$ and $1.0$.
+* **Panoramic Field (`SpatialPanning`):** Maps the audio signal across a balanced left-to-right stereo panorama. Panning moves dynamically from $0.0$ (hard left) through $0.5$ (center) up to $1.0$ (hard right).
+* **Immersive Spread (`StereoWidth`):** Automatically broadens the acoustic field. As the interaction moves away from the center of the drawing surface toward either boundary edge, the signal spreads from a focused mono signal ($0.0$) out to an immersive wide-stereo configuration ($1.0$).
+
+To feed these parameters accurate data, `AuralineController.cs` intercepts vector telemetry through two dedicated functions: `CalculateVelocity()` and `HandleTouch()`. 
+
+##### Step A: Stroke Speed & Kinetic Friction Tracking
+Inside `CalculateVelocity()`, the application evaluates the pixel distance traversed between frames. This displacement is divided by delta time, multiplied by a adjustable `velocitySensitivity` coefficient, and smoothed via linear interpolation to eliminate digital audio stepping:
+
+```csharp
+void CalculateVelocity()
+{
+    Vector3 currentMousePos = Pointer.current.position.ReadValue();
+    float distance     = Vector3.Distance(currentMousePos, lastFrameMousePos);
+    
+    // Prevent division by zero if Time.deltaTime is extremely small
+    float dt = Mathf.Max(Time.deltaTime, 0.0001f);
+    
+    // Evaluate velocity and apply a 5.0x modifier for aggressive distortion response
+    float currentSpeed = (distance / (dt * 1000f)) * velocitySensitivity;
+    drawingIntensity   = Mathf.Clamp01(Mathf.Lerp(drawingIntensity, currentSpeed, dt * 8f));
+    lastFrameMousePos  = currentMousePos;
+}
+```
+*Figure 12. C# implementation of the gestural velocity tracking algorithm, where frame-to-frame pointer displacement scales drawing intensity to dynamically drive aggressive distortion parameters during real-time interaction.*
+
+---
+
+##### Step B: Viewport Coordinate Splitting
+
+Inside `HandleTouch()`, the world-space intersection point of the raycast is normalized against the minimum and maximum boundaries of the `screenCollider`. This matrix maps the single horizontal percentage (`xPct`) simultaneously across the pitch, panning, and width buses:
+
+```csharp
+// Extract boundary data from the screen collider geometry
+Bounds b   = screenCollider.bounds;
+float xPct = Mathf.Clamp01((hit.point.x - b.min.x) / b.size.x);
+float yPct = Mathf.Clamp01((hit.point.y - b.min.y) / b.size.y);
+
+// Multi-parameter mapping matrix
+spatialPanning = xPct;                                // Standard linear left-to-right pan
+stereoWidth    = Mathf.Abs(xPct - 0.5f) * 2f;         // Evaluates total distance from center
+pitchLevel     = Mathf.Lerp(-12f, 12f, xPct);         // Maps pitch shifts across horizontal bounds
+reverbLevel    = Mathf.Lerp(0f, 1f, yPct);            // Maps wet reverb levels along vertical axis
+```
+*Figure 13. C# implementation of the expanded multi-parameter mapping matrix, where normalized screen bounds concurrently derive linear spatial panning, absolute center-distance stereo width, pitch shifting, and wet reverb modifiers.*
+
+Integrating this multi-parameter data architecture significantly elevated both the programmatic stability and the tactile feel of the instrument:
+
+* **Cohesive Geometric-Auditory Mapping:** The acoustic landscape directly matches the physical dimensions of the 3D canvas. Moving the drawing tool toward the far margins of the board doesn't just alter pitch; it physically pans the soundstage outward while widening the stereo image, matching the visual breadth of the expanding lines.
+* **Velocity-Responsive Saturation:** By hooking up `DrawingIntensity` to stroke speed, user expression gains a physical layer of feedback. Drawing slow, delicate paths yields clean, isolated melodic tones, while swift, sudden gestures trigger a distorted, driven sonic response that matches the energy of the input.
+
+---
+
+### Updating The Interface
+
+#### Next Track Button
+
