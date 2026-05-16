@@ -16,5 +16,5 @@ Auraline is an interactive application exploring the intersection of psychology,
 *   **Reactive Visuals:** Custom material emission toggles and pulsing button states that respond to FMOD playback states.
 
 ---
-## Documentation & Journals
+## Documentation & Scripts
 *   [Development Journal](Documents/DevelopmentCommentary.md)
