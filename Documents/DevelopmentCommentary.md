@@ -75,7 +75,7 @@ To protect the development workflow from console pollution and compile-time fail
 
 ---
 
-### Sources
+## Sources
 
 #### 1. [FMOD Studio Unity Integration Documentation](https://www.fmod.com/docs/2.03/unity/api.html)
 Published by **Firelight Technologies**, the creator of the industry-standard FMOD Studio audio middleware engine, this official scripting API reference guide is widely respected for its deep technical clarity and platform-agnostic stability. This source was critical to the architectural development of Auraline because it details the precise C# classes, methods, and memory structures required to instantiate runtime event instances, manipulate mixer properties, and pass data from Unity into dynamic audio buses safely.
@@ -202,4 +202,4 @@ Transitioning to ProBuilder allowed me to quickly iterate on the physical form o
 
 ---
 
-## FMOD Implementation In Unity
+### FMOD Implementation In Unity
