@@ -635,7 +635,7 @@ Having a designated space just for musical production and mixing was curcial. I 
 
 I have spent one full day of the week for three consecutives weeks in the studio. I was able to shift my entire focus not only on producing but polishing the project as well. Having the opportunity to be in a room by myself has kept a very fluid and elevated flow in my work as the distractions were reduced close to zero. I would argue that experiencing this particular environment is optimal for achieving set goals, even aspirational ones that seem out of reach.
 
-<img width="714" height="400" alt="IMG_1439" src="https://github.com/user-attachments/assets/dc779c6f-62fb-495b-906b-19d92f75b259" />
+<img width="714" height="400" alt="IMG_1439" src="https://github.com/user-attachments/assets/34b15d16-b8ad-4401-9187-6dc2e044227e" />
 
 *Figure 24. Myself in the studio working on one of the songs that was implemented in Auraline.*
 
