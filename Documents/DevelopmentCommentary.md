@@ -651,20 +651,28 @@ I have spent one full day of the week for three consecutives weeks in the studio
 
 The track is built around a heavy juxtaposition of raw, organic textures and highly processed, synthetic space. It utilizes a soulful, expressive vocal acapella sample as both the emotional centerpiece and a rhythmic instrument, suspended over a lush ambient pad and a classic lo-fi vinyl texture. The driving force of the track's movement is a pronounced sidechain pumping effect that introduces a rhythmic pulse, even when explicit percussion elements recede.
 
-https://github.com/user-attachments/assets/12642ab2-38be-4fe0-8858-b37905e6a781
+https://github.com/user-attachments/assets/729cb5a8-3794-4408-8e9f-f983a9104728
 
-*Figure 26. Video with a dark background and the Track 1 audio file playing.*
+*Figure 26. Video with a dark background and the audio for Track 1 playing.*
+
+#### Sample For Track 1:
+
+The sample was found on Tracklib by scrolling through available samples on the main page.
+
+https://github.com/user-attachments/assets/d49b2995-3219-4f40-93b0-e268ee1f957f
+
+*Figure 27. Video with a dark background and the audio that has been sampled for Track 1.*
 
 #### Sample Manipulation & Chopping
 * **Tools:** `Quick Sampler`, `Vocal Transformer`
 * **Execution:** Dragged the acapella into `Quick Sampler` (Slice Mode) to automatically map vocal chops across the MIDI grid.
 * **Pitch & Time:** Shifted the pitch up while keeping formants neutral via `Vocal Transformer` to avoid an unnatural "chipmunk" sound.
 
-#### Phase 2: The Spatial Layer
+#### The Spatial Layer
 * **Tools:** `ChromaVerb`
 * **Lush Reverb Tail:** Sent the signal to `ChromaVerb` (Synth Hall, 3.5–5s decay). High-passed the reverb return to filter out low-end rumble and prevent mud.
 
-#### Phase 3: Rhythmic Modulation & Dynamic Pumping
+#### Rhythmic Modulation & Dynamic Pumping
 * **Tools:** `Compressor`
 * **Sidechain Ducking:** Placed a `Compressor` on the vocal/pad submix, sidechained to a kick drum trigger track. Set a low threshold, high ratio (4:1+), fast attack, and timed release to create a heavy rhythmic "breathing" pulse.
 
