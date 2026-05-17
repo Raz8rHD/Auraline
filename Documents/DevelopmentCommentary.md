@@ -661,7 +661,7 @@ The sample was found on Tracklib by scrolling through available samples on the m
 
 https://github.com/user-attachments/assets/85c04739-459d-4039-9386-3d2438037529
 
-*Figure 27. Video with a dark background and the audio that has been sampled for Track 1.*
+*Figure 27. Video with a dark background and the audio that has been sampled in Track 1.*
 
 #### Sample Manipulation & Chopping
 * **Tools:** `Quick Sampler`, `Vocal Transformer`
@@ -678,8 +678,22 @@ https://github.com/user-attachments/assets/85c04739-459d-4039-9386-3d2438037529
 
 <img width="1468" height="921" alt="Screenshot 2026-05-17 at 21 32 54" src="https://github.com/user-attachments/assets/8c7ee768-556f-4772-bbfc-fbc5ffdf3db9" />
 
-*Figure 27. Timeline arrangement of the digital audio workstation pipeline in Apple Logic Pro, demonstrating the multi-tier asset integration and layer tracking mechanics in action, capturing the initial transport state set to a down-tempo 62 BPM alignment executing an organic lo-fi bedrock via the continuous vinyl static loop (vinyl_static1), transitioning the workflow focus onto the selected primary vocal sample (UNKWN-Dom Perignon-Master) initialized in a record-armed state, and demonstrating the parallel arrangement of software instrument matrices (Roland TR-606, Future Flex, After Party) that govern the rhythmic and harmonic architecture of the project.*
+*Figure 28. Timeline arrangement of the digital audio workstation pipeline in Apple Logic Pro, demonstrating the multi-tier asset integration and layer tracking mechanics in action, capturing the initial transport state set to a down-tempo 62 BPM alignment executing an organic lo-fi bedrock via the continuous vinyl static loop (vinyl_static1), transitioning the workflow focus onto the selected primary vocal sample (UNKWN-Dom Perignon-Master) initialized in a record-armed state, and demonstrating the parallel arrangement of software instrument matrices (Roland TR-606, Future Flex, After Party) that govern the rhythmic and harmonic architecture of the project.*
 
 ---
 
 #### Track 2
+
+This tracks is build around the sample **"Tudo Que Voce Podia Se"** written by [Lô Borges](https://en.wikipedia.org/wiki/Lô_Borges) and [Márcio Borges](https://www.themoviedb.org/person/4059612-marcio-borges). Famously serving as the opening masterpiece of the legendary 1972 Brazilian album [Clube da Esquina](https://en.wikipedia.org/wiki/Clube_da_Esquina_(album)) by Milton Nascimento and Lô Borges, this has helped me and my produciton lean towards a new direction. It completely challenged how I approach instrumental arrangement and forced me to switch genres, expanding what I thought I could do with digital sound design. My goal was to create a danceable track while maintaining original parts from the sample.
+
+https://github.com/user-attachments/assets/c92ce9c0-d780-4e4e-b6d2-d43799f6caf2
+
+*Figure 29. Video with a dark background and the audio for Track 2 playing.*
+
+#### Sample For Track 2:
+
+The sample was heard by myself in a short video showing **Kanye West** and **Pharrell Williams** vibing to this song. Using **Shazam** while the video was playing, identfiyng the song was fast and simple, writing the name down in my notes for further use.
+
+https://github.com/user-attachments/assets/9bf1b631-c384-4d42-b6e8-60db78ff711d
+
+*Figure 30. Video with a dark background and the audio that has been sampled in Track 2.*
