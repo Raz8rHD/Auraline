@@ -584,24 +584,38 @@ https://github.com/user-attachments/assets/e72937dc-75db-4518-b408-7588ec77a9e0
 
 ---
 
-## Logic Pro
+## Music Production
 
-### Music Production
+### Sonic Foundations: Crate-Digging, Sample Curation, and Composition Strategy
 
-Having utilized Logic Pro consistently since college and throughout past uni projects, returning to it for the production of **Auraline's** multi-track soundtrack was a highly deliberate, tactical decision rather than just a choice of comfort. When developing an interactive instrument that relies on real-time data translation, the DAW isn't just producing static background music—it is crafting the raw, delicate sonic assets that FMOD manipulates on the fly. 
+To establish a rich, authentic musical footprint for **Auraline**, I chose to anchor the 5-track interactive soundtrack in heavily sample-driven arrangements. Rather than generating every synthesizer voice or structural drum pattern from scratch inside the studio, I kicked off the audio production workflow with a dedicated phase of pre-studio digital crate-digging. 
 
-Integrating my long-term workflow with Logic Pro into the Auraline pipeline provided a couple of advantages to my development process:
+#### Maximizing Studio Economics
+This approach was highly intentional. Because my physical studio booking windows were strictly limited, I couldn't afford to lose expensive on-clock hours staring at an empty DAW grid or blindly clicking through plugin presets. I wanted to treat my studio time purely as an **execution phase**—a focused window dedicated entirely to heavy tracking, routing raw signals through physical analog hardware, and optimizing final multi-track arrangements. 
 
-#### 1. Creative Flow & Familiarity
-When designing an experience focused heavily on the delicate psychological intersection of visual design and multi-sensory audio perception, technical friction is an absolute workflow killer. Returning to an environment I know quite well allowed me to completely bypass any DAW learning curves. Handling audio routing, instrument selection and mixing has definitely helped freeing up my entire cognitive bandwidth to focus on the artistic core: composing 5 distinct sonic atmospheres that react intuitively to a text-free, gestural interface.
+By handling the sample-hunting phase during my free time outside the studio, I walked into every session with a definitive structural blueprint. This ensured that every minute of available studio gear access was utilized with maximum efficiency.
 
-#### 2. Ecosystem Performance & Resource Optimization
-Developing Auraline requires running three resource-heavy environments simultaneously on my MacBook Air: the Unity Game Engine, FMOD Studio, and a primary DAW. Logic Pro's deep, native optimization for Apple Silicon proved critical. It allowed me to arrange, mix, and render dense, multi-track arrangements without thermal-throttling my machine or starving Unity of the CPU cycles it needed to smoothly generate dynamic `LineRenderer` geometry in real time.
+#### The Art of the Sample Wrap
+Leaning heavily into sampling, trimming, and rearranging old melodies is a deep personal passion of mine. There is a distinct creative satisfaction in unearthing a hidden legacy melody, slicing its transients, and building an entirely fresh, modern production wrapped tightly around the soul of the original sample. This design philosophy pairs perfectly with Auraline’s physical aesthetic: taking something historical and static and translating it into a highly dynamic, real-time interactive user experience.
 
-#### 3. Frequency Carving for Aggressive FMOD Modulation
-In Auraline, user interactions dynamically drive audio variables like `PitchShift` (+/-12 semitones), `DrawingIntensity` (aggressive overdrive), spatial panning, and reverb. If a track is mixed too densely, real-time DSP manipulation will instantly collapse the audio into a muddy, clipped mess. 
+---
 
-Using Logic's precise channel-strip EQs, linear-phase filters, and dynamic spatial imaging tools, I was able to intentionally "carve out" wide spectral windows for the interactive layers. Pre-mixing the stems with ample dynamic headroom ensured that when the C# layer aggressively drives FMOD’s parameters, the audio remains pristine, clear, and punchy.
+#### Crate-Digging Pipelines & Digital Mediums
+To curate my primary sample pool, I spent hours scanning through multiple digital platforms, filtering for unique audio hooks, vocal fragments, and complex harmonic progressions:
+* **Streaming Discovery Frameworks:** I utilized [Spotify](https://www.spotify.com) and [YouTube](https://www.youtube.com) as my primary hunting grounds, digging deep into archival world-music playlists, multi-cultural radio broadcasts, and isolated performance stems.
+* **Pro-Grade Sample Acquisition:** For high-fidelity source material that could be cleanly manipulated, I leveraged [Tracklib](https://www.tracklib.com/) to find, isolate, and legally source specialized master loops with precise key and tempo data.
+
+#### Creative Direction & Sonic References
+My arrangement choices were directly informed by iconic producers and visionaries who have historically pushed the boundaries of sampling, sonic distortion, and raw spatial design. I analyzed the production techniques of legendary artists like **Kanye West**, **Daft Punk**, **A$AP Rocky**, **Bad Bunny**, and **Michael Jackson**. 
+
+Specifically, my world-building and sub-mix spacing were heavily inspired by a core rotation of masterclass albums:
+* **[Yeezus](https://open.spotify.com/album/7D2NdGvBHIavgLhmcwhluK) & [Graduation](https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3) (Kanye West):** The definitive blueprints for weaponizing harsh, industrial synthesizer minimalism alongside pitched-up soul loops and grand melodic hooks.
+* **[BULLY](https://open.spotify.com/album/5poA9SAx0Xiz1cf17fWBLS) (Kanye West):** Influenced my approach to spare, soul-flecked compositions that retain a raw, analog grit even when heavily processed.
+* **[Discovery](https://open.spotify.com/album/2noRn2Aes5aoNVsU6iWThc) (Daft Punk):** A masterclass in sample filtering, micro-chopping transients, and utilizing heavy sidechain-compression to create rhythmic pumping effects.
+* **[Don't Be Dumb](https://open.spotify.com/album/4itKk52E9ZCdWUQcFAkud9) (A$AP Rocky):** Inspired the avant-garde panning matrices, psychedelic low-end processing, and multi-genre sonic spaces found within Auraline's sub-mix tracks.
+* **[DeBI TiRAR MaS FOToS](https://open.spotify.com/album/5K79FLRUCSysQnVESLcTdb) (Bad Bunny):** Heavily influenced how I integrated traditional, organic acoustic percussion loops cleanly into modern, high-energy electronic soundscapes.
+
+By synthesizing these diverse cross-modal influences with a disciplined, pre-curated sampling framework, I was able to walk into the studio room and cleanly construct 5 cohesive compositions. Each track provides the exact spectral space needed to let Auraline's interactive drawing board shine.
 
 ---
 
@@ -619,7 +633,7 @@ Having a designated space just for musical production and mixing was curcial. I 
 
 ### Being In The Studio
 
-I have spent three consecutives weeks in the studio where I could shift my entire focus not only on producing but polishing the project as well. Having the opportunity to be in a room by myself has kept a very fluid and elevated flow in my work as the distractions were reduced close to zero. I would argue that experiencing this particular environment is optimal for achieving set goals, even aspiral ones that seemed out of reach.
+I have spent one full day of the week for three consecutives weeks in the studio. I was able to shift my entire focus not only on producing but polishing the project as well. Having the opportunity to be in a room by myself has kept a very fluid and elevated flow in my work as the distractions were reduced close to zero. I would argue that experiencing this particular environment is optimal for achieving set goals, even aspirational ones that seem out of reach.
 
 <img width="714" height="400" alt="IMG_1439" src="https://github.com/user-attachments/assets/dc779c6f-62fb-495b-906b-19d92f75b259" />
 
@@ -631,5 +645,5 @@ I have spent three consecutives weeks in the studio where I could shift my entir
 
 ---
 
-### Samples & Songs
+### Logic Arrangements
 
