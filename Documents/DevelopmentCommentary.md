@@ -578,4 +578,8 @@ To ensure a seamless playback experience, the control pipeline was re-architecte
 * **Explicit Playhead Unfreezing:** The resume sequence was modified to call `musicInstance.setPaused(false)` instead of firing `.start()`. This commands the FMOD engine to unfreeze the existing timeline, preserving the active playhead metrics.
 * **Bootup Callback Separation:** The cold-start sequence was completely isolated from standard toggle inputs. The initial click flips a private flag (`_hasStartedBootup = true`), and the `.start()` command is safely deferred to a dedicated `CompleteBootup()` callback that triggers only *after* the hardware startup timer has fully finished.
 
+https://github.com/user-attachments/assets/e72937dc-75db-4518-b408-7588ec77a9e0
+
+*Figure 20. Runtime demonstration of the TogglePlayback mechanics in action, capturing the cold-boot sequence executing a theatrical initialization fade, transitioning the controller into an active playback state (green emissive glow) with dynamic drawing interaction, and demonstrating the pause functionality (yellow emissive glow) that safely suspends the real-time audio stream.*
+
 ---
