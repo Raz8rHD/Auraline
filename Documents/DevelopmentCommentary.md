@@ -338,7 +338,7 @@ Transitioning to a nested event architecture streamlined the development workflo
 * **Encapsulated Sub-Mixing:** Routing child events directly through the parent channel strip enables a unified master effects chain. This centralized routing streamlines acoustic optimization, ensuring consistent loudness thresholds and compression profiles across all tracks automatically.
 * **Unified Parameter Routing:** Because parameters are recursively inherited by the parent event, the baseline coordinate-mapping scripts required zero structural rewrites. The C# layer continues communicating directly with the master instance, while FMOD seamlessly delegates those telemetry inputs downstream to the active child timeline.
 
-![Picture](./Videos/fmodsetup.mov)
+https://github.com/user-attachments/assets/49380570-f043-4721-8917-3a6e3560fcd7
 
 *Figure 12. Nested multi-track event structure within FMOD Studio, where a global TrackSelector parameter dynamically crossfades between five distinct musical timelines routed into a unified master DSP modulation chain.*
 
