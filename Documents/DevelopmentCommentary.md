@@ -645,9 +645,9 @@ I have spent one full day of the week for three consecutives weeks in the studio
 
 ---
 
-### Logic Tracks
+## Logic Tracks
 
-#### Track 1 
+### Track 1 
 
 The track is built around a heavy juxtaposition of raw, organic textures and highly processed, synthetic space. It utilizes a soulful, expressive vocal acapella sample as both the emotional centerpiece and a rhythmic instrument, suspended over a lush ambient pad and a classic lo-fi vinyl texture. The driving force of the track's movement is a pronounced sidechain pumping effect that introduces a rhythmic pulse, even when explicit percussion elements recede.
 
@@ -677,7 +677,7 @@ https://github.com/user-attachments/assets/85c04739-459d-4039-9386-3d2438037529
 
 ---
 
-#### Track 2
+### Track 2
 
 This tracks is build around the sample **"Tudo Que Voce Podia Se"** written by [Lô Borges](https://en.wikipedia.org/wiki/Lô_Borges) and [Márcio Borges](https://www.themoviedb.org/person/4059612-marcio-borges). Famously serving as the opening masterpiece of the legendary 1972 Brazilian album [Clube da Esquina](https://en.wikipedia.org/wiki/Clube_da_Esquina_(album)) by Milton Nascimento and Lô Borges, this has helped me and my produciton lean towards a new direction. It completely challenged how I approach instrumental arrangement and forced me to switch genres, expanding what I thought I could do with digital sound design. My goal was to create a danceable track while maintaining original parts from the sample.
 
@@ -710,3 +710,10 @@ https://github.com/user-attachments/assets/9bf1b631-c384-4d42-b6e8-60db78ff711d
 * **Shaker:** For keeping the rhythm , a shaker panned to the left has been added to serve as a hi-hat.
 * **Congas:** The congas (high and low) are added by myself with the help of MIDI keyboard. These were layed down to flesh out the song. The idea came from the song [BAILE INoLVIDABLE](https://open.spotify.com/track/2lTm559tuIvatlT1u0JYG2?si=eb7db82be37449fe) by **Bad Bunny**.
 
+<img width="1233" height="773" alt="Screenshot 2026-05-17 at 23 40 39" src="https://github.com/user-attachments/assets/3b2ded74-bf51-4aa4-bff9-5a42f1c8aff4" />
+
+*Figure 33. Timeline arrangement of the digital audio workstation pipeline in Apple Logic Pro, demonstrating the multi-tier asset integration and layer tracking mechanics in action, capturing the initial transport state set to a mid-tempo 90 BPM alignment in a 4/4 C-major framework, transitioning the workflow focus onto the selected primary audio track (Tudo Que Voce Podia Ser) initialized in a muted configuration, and demonstrating the parallel arrangement of software instrument and percussion matrices (Empty Quick Sampler, Acoustic Bump, Synthia, Studio Percussion) that govern the rhythmic and harmonic architecture of the project.*
+
+---
+
+### Track 3
