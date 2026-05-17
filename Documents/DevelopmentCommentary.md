@@ -717,3 +717,33 @@ https://github.com/user-attachments/assets/9bf1b631-c384-4d42-b6e8-60db78ff711d
 ---
 
 ### Track 3
+
+This track is build around the sample **"Caravan"** written by Thelonious Monk. Another sample that has challenged me to experiment with a different approach and genre, which it was exactly what I needed to slowly build a chameleonic style when it comes to musical arrangements. The integrity of the sample has been kept, the only thing that I have done to it was to cut it short for **Auraline**.
+
+https://github.com/user-attachments/assets/f3ff9ff6-afc7-4527-8801-e85aae0a2c6f
+
+*Figure 34. Video with a dark background and the audio for Track 3.*
+
+#### Sample For Track 3:
+
+I heard the sample while listening to **ASAP Rocky's** new album **"Don't Be Dumb"**. To be more specific, I heard the sample being interpolated in the song [Robbery](https://open.spotify.com/track/5FYaSV8TLF7qvonB1BDOw0?si=9f1564e781c746c7). I enjoyed it so much that I have been thinking about it ever since and how I can make it sound different from what I heard previously.
+
+https://github.com/user-attachments/assets/64d6df3d-8edb-4d46-9675-3800c66a25c9
+
+*Figure 35. Video with a dark background and the audio that has been sampled in Track 3.*
+
+#### Chopping
+* The sample was only cut shorter and nothing else.
+
+#### Added Instruments
+* **Crusty Hi-Hats:** Found in the Logic library, I considered them fitting for the song, since the part I used was lacking any high frequencies.
+* **Snaps:** I wanted the song to feel more like a live performance, adding rhythmical snaps was a personal choice to try and chieve this feeling.
+* **Sub-kick Bass:** Due to the sample recording, the original bass is not as punchy as I would have liked so with the MIDI keyboard, I have added myself bass lines by ear and matched them as close as possible with the original bass.
+
+<img width="1093" height="634" alt="Screenshot 2026-05-18 at 00 30 24" src="https://github.com/user-attachments/assets/799b9597-5326-4922-9a88-7c097f6b9b1e" />
+
+*Figure 36.Timeline arrangement within Apple Logic Pro, demonstrating multi-tier asset integration with the transport state set to a mid-tempo 950 BPM alignment in a 4/4 C-major framework. The workflow focus is centered on the selected, record-armed track (Kick 3 Sub - Blowing Speakers), arranged in parallel with a primary audio layer (Caravan) and a rhythmic matrix of software percussion tracks (Hi-Hat 1, Snaps, Shaker) that govern the project's architecture.*
+
+---
+
+## Testing
