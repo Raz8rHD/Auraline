@@ -651,7 +651,27 @@ I have spent one full day of the week for three consecutives weeks in the studio
 
 The track is built around a heavy juxtaposition of raw, organic textures and highly processed, synthetic space. It utilizes a soulful, expressive vocal acapella sample as both the emotional centerpiece and a rhythmic instrument, suspended over a lush ambient pad and a classic lo-fi vinyl texture. The driving force of the track's movement is a pronounced sidechain pumping effect that introduces a rhythmic pulse, even when explicit percussion elements recede.
 
-#### Track 1 
+https://github.com/user-attachments/assets/12642ab2-38be-4fe0-8858-b37905e6a781
 
-The track is built around a heavy juxtaposition of raw, organic textures and highly processed, synthetic space. It utilizes a soulful, expressive vocal acapella sample as both the emotional centerpiece...
+*Figure 26. Video with a dark background and the Track 1 audio file playing.*
 
+#### Sample Manipulation & Chopping
+* **Tools:** `Quick Sampler`, `Vocal Transformer`
+* **Execution:** Dragged the acapella into `Quick Sampler` (Slice Mode) to automatically map vocal chops across the MIDI grid.
+* **Pitch & Time:** Shifted the pitch up while keeping formants neutral via `Vocal Transformer` to avoid an unnatural "chipmunk" sound.
+
+#### Phase 2: The Spatial Layer
+* **Tools:** `ChromaVerb`
+* **Lush Reverb Tail:** Sent the signal to `ChromaVerb` (Synth Hall, 3.5–5s decay). High-passed the reverb return to filter out low-end rumble and prevent mud.
+
+#### Phase 3: Rhythmic Modulation & Dynamic Pumping
+* **Tools:** `Compressor`
+* **Sidechain Ducking:** Placed a `Compressor` on the vocal/pad submix, sidechained to a kick drum trigger track. Set a low threshold, high ratio (4:1+), fast attack, and timed release to create a heavy rhythmic "breathing" pulse.
+
+<img width="1468" height="921" alt="Screenshot 2026-05-17 at 21 32 54" src="https://github.com/user-attachments/assets/8c7ee768-556f-4772-bbfc-fbc5ffdf3db9" />
+
+*Figure 27. Timeline arrangement of the digital audio workstation pipeline in Apple Logic Pro, demonstrating the multi-tier asset integration and layer tracking mechanics in action, capturing the initial transport state set to a down-tempo 62 BPM alignment executing an organic lo-fi bedrock via the continuous vinyl static loop (vinyl_static1), transitioning the workflow focus onto the selected primary vocal sample (UNKWN-Dom Perignon-Master) initialized in a record-armed state, and demonstrating the parallel arrangement of software instrument matrices (Roland TR-606, Future Flex, After Party) that govern the rhythmic and harmonic architecture of the project.*
+
+---
+
+#### Track 2
