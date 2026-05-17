@@ -663,11 +663,6 @@ https://github.com/user-attachments/assets/85c04739-459d-4039-9386-3d2438037529
 
 *Figure 27. Video with a dark background and the audio that has been sampled in Track 1.*
 
-#### Sample Manipulation & Chopping
-* **Tools:** `Quick Sampler`, `Vocal Transformer`
-* **Execution:** Dragged the acapella into `Quick Sampler` (Slice Mode) to automatically map vocal chops across the MIDI grid.
-* **Pitch & Time:** Shifted the pitch up while keeping formants neutral via `Vocal Transformer` to avoid an unnatural "chipmunk" sound.
-
 #### The Spatial Layer
 * **Tools:** `ChromaVerb`
 * **Lush Reverb Tail:** Sent the signal to `ChromaVerb` (Synth Hall, 3.5–5s decay). High-passed the reverb return to filter out low-end rumble and prevent mud.
@@ -697,3 +692,21 @@ The sample was heard by myself in a short video showing **Kanye West** and **Pha
 https://github.com/user-attachments/assets/9bf1b631-c384-4d42-b6e8-60db78ff711d
 
 *Figure 30. Video with a dark background and the audio that has been sampled in Track 2.*
+
+#### Sample Manipulation & Chopping
+* **Tools:** `Quick Sampler`, `St-Delay`, `ChromaVerb`
+* **Execution:** Dragged the acapella into `Quick Sampler` (Slice Mode) to automatically map vocal chops across the MIDI grid. Turned down the `Cutoff` to 38% to give a "muffled" feeling to the song. Progressively turned the filter up to 100% to get a "clearer" audio section. Towards the end of the audio clip, I have manually added automation for the reverb and the delay. Right before the audio clip ends, the `Wet` increases to 50%, `Decay` to 3.10s and `Distance` to 71%. The `St-Delay` increases its left and right output mix to 34%. With these settings, I was aiming for a nice fade out of the vocals as the instrumental rises.
+
+<img width="375" height="307" alt="Screenshot 2026-05-17 at 23 09 48" src="https://github.com/user-attachments/assets/fd0789f3-4d41-4e6b-ab12-fa542898b268" />
+
+*Figure 31. Stereo Delay module interface in Apple Logic Pro, demonstrating a symmetrical 1/16 note (167 ms) tempo-synced configuration with 50% feedback, full-spectrum filter routing (20 Hz–20 kHz), and a uniform 34% output mix governing the wet signal architecture.*
+
+<img width="521" height="400" alt="Screenshot 2026-05-17 at 23 19 32" src="https://github.com/user-attachments/assets/508d568e-9f63-4e6f-9ba1-ebdfa48b0d1a" />
+
+*Figure 32. ChromaVerb interface in Apple Logic Pro, demonstrating a "Room" algorithmic configuration with a 3.10 s decay time, 8 ms predelay, symmetrical 60% size and density settings, and a 50% wet output mix governing the spatial architecture.*
+
+#### Added Instruments
+* **Claps:** To give a more natural and danceable feeling to the song, I have added claps that come in every now and then to avoid repetition.
+* **Shaker:** For keeping the rhythm , a shaker panned to the left has been added to serve as a hi-hat.
+* **Congas:** The congas (high and low) are added by myself with the help of MIDI keyboard. These were layed down to flesh out the song. The idea came from the song [BAILE INoLVIDABLE](https://open.spotify.com/track/2lTm559tuIvatlT1u0JYG2?si=eb7db82be37449fe) by **Bad Bunny**.
+
