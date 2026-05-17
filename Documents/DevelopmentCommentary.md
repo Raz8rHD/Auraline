@@ -584,7 +584,52 @@ https://github.com/user-attachments/assets/e72937dc-75db-4518-b408-7588ec77a9e0
 
 ---
 
-## Music Production
+## Logic Pro
 
-### Logic Pro
+### Music Production
+
+Having utilized Logic Pro consistently since college and throughout past uni projects, returning to it for the production of **Auraline's** multi-track soundtrack was a highly deliberate, tactical decision rather than just a choice of comfort. When developing an interactive instrument that relies on real-time data translation, the DAW isn't just producing static background music—it is crafting the raw, delicate sonic assets that FMOD manipulates on the fly. 
+
+Integrating my long-term workflow with Logic Pro into the Auraline pipeline provided a couple of advantages to my development process:
+
+#### 1. Creative Flow & Familiarity
+When designing an experience focused heavily on the delicate psychological intersection of visual design and multi-sensory audio perception, technical friction is an absolute workflow killer. Returning to an environment I know quite well allowed me to completely bypass any DAW learning curves. Handling audio routing, instrument selection and mixing has definitely helped freeing up my entire cognitive bandwidth to focus on the artistic core: composing 5 distinct sonic atmospheres that react intuitively to a text-free, gestural interface.
+
+#### 2. Ecosystem Performance & Resource Optimization
+Developing Auraline requires running three resource-heavy environments simultaneously on my MacBook Air: the Unity Game Engine, FMOD Studio, and a primary DAW. Logic Pro's deep, native optimization for Apple Silicon proved critical. It allowed me to arrange, mix, and render dense, multi-track arrangements without thermal-throttling my machine or starving Unity of the CPU cycles it needed to smoothly generate dynamic `LineRenderer` geometry in real time.
+
+#### 3. Frequency Carving for Aggressive FMOD Modulation
+In Auraline, user interactions dynamically drive audio variables like `PitchShift` (+/-12 semitones), `DrawingIntensity` (aggressive overdrive), spatial panning, and reverb. If a track is mixed too densely, real-time DSP manipulation will instantly collapse the audio into a muddy, clipped mess. 
+
+Using Logic's precise channel-strip EQs, linear-phase filters, and dynamic spatial imaging tools, I was able to intentionally "carve out" wide spectral windows for the interactive layers. Pre-mixing the stems with ample dynamic headroom ensured that when the C# layer aggressively drives FMOD’s parameters, the audio remains pristine, clear, and punchy.
+
+---
+
+### Booking The Studio
+
+Having a designated space just for musical production and mixing was curcial. I do not own anything besides Logic Pro and my laptop so this was a huge neccessity and helped elevate my production, making the progress more enjoyable. I have found out that UCA owns a couple of small rooms for music production and all I had to do was to book it through university's **SmartHub**.
+
+<img width="316" height="316" alt="Screenshot 2026-05-17 at 17 26 38" src="https://github.com/user-attachments/assets/ad688604-871a-471c-a643-81572f1128a0" />
+<img width="314" height="314" alt="Screenshot 2026-05-17 at 17 28 12" src="https://github.com/user-attachments/assets/e666c50b-f66c-4182-a4e1-a071516e41f6" />
+<img width="309" height="309" alt="Screenshot 2026-05-17 at 17 30 23" src="https://github.com/user-attachments/assets/99a250f3-2145-489e-b5a3-6c6e0b0da41f" />
+
+*Figures 21, 22, 23. Screenshots of studio bookings' times and dates completed through UCA's SmartHub.*
+
+---
+
+### Being In The Studio
+
+I have spent three consecutives weeks in the studio where I could shift my entire focus not only on producing but polishing the project as well. Having the opportunity to be in a room by myself has kept a very fluid and elevated flow in my work as the distractions were reduced close to zero. I would argue that experiencing this particular environment is optimal for achieving set goals, even aspiral ones that seemed out of reach.
+
+<img width="714" height="400" alt="IMG_1439" src="https://github.com/user-attachments/assets/dc779c6f-62fb-495b-906b-19d92f75b259" />
+
+*Figure 24. Myself in the studio working on one of the songs that was implemented in Auraline.*
+
+<img width="501" height="535" alt="IMG_1563" src="https://github.com/user-attachments/assets/632f2fc5-0aab-421f-8454-e44665418afa" />
+
+*Figure 25. Myself again in the studio working on another one of the songs that was implemented in Auraline.*
+
+---
+
+### Samples & Songs
 
