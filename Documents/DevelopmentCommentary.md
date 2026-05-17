@@ -659,7 +659,7 @@ https://github.com/user-attachments/assets/729cb5a8-3794-4408-8e9f-f983a9104728
 
 The sample was found on Tracklib by scrolling through available samples on the main page.
 
-https://github.com/user-attachments/assets/d49b2995-3219-4f40-93b0-e268ee1f957f
+https://github.com/user-attachments/assets/85c04739-459d-4039-9386-3d2438037529
 
 *Figure 27. Video with a dark background and the audio that has been sampled for Track 1.*
 
