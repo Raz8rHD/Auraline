@@ -651,5 +651,3 @@ I have spent one full day of the week for three consecutives weeks in the studio
 
 The track is built around a heavy juxtaposition of raw, organic textures and highly processed, synthetic space. It utilizes a soulful, expressive vocal acapella sample as both the emotional centerpiece and a rhythmic instrument, suspended over a lush ambient pad and a classic lo-fi vinyl texture. The driving force of the track's movement is a pronounced sidechain pumping effect that introduces a rhythmic pulse, even when explicit percussion elements recede.
 
-https://github.com/user-attachments/assets/40d0ded4-ce0a-4cd1-b465-45f19c51c5b9
-
