@@ -583,3 +583,8 @@ https://github.com/user-attachments/assets/e72937dc-75db-4518-b408-7588ec77a9e0
 *Figure 20. Runtime demonstration of the TogglePlayback mechanics in action, capturing the cold-boot sequence executing a theatrical initialization fade, transitioning the controller into an active playback state (green emissive glow) with dynamic drawing interaction, and demonstrating the pause functionality (yellow emissive glow) that safely suspends the real-time audio stream.*
 
 ---
+
+## Music Production
+
+### Logic Pro
+
