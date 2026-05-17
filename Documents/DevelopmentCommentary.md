@@ -440,6 +440,10 @@ To restore reliable track switching, the architecture was modified through a two
 * **FMOD Scope Realignment:** The `TrackSelector` configuration inside FMOD Studio was switched from a local property to an explicit **Global** parameter. This instantly enabled the underlying sound mix to respond to Unity's global scripting API broadcasts.
 * **State Logic Optimization:** The validation checks within the `NextTrack()` method were refactored to work cleanly alongside the application's startup state. Integrating the explicit `_isWaitingForNextTrack` coroutine flag allows the interface to safely manage rapid user taps without dropping inputs or breaking the user's tutorial flow.
 
+https://github.com/user-attachments/assets/596a5197-fc30-4d1a-ab65-f5eb5ec26725
+
+*Figure 16. Runtime demonstration of the hardware Next Track button interaction, where pressing the designated console pad updates the global FMOD TrackSelector parameter to seamlessly transition the active audio playback across distinct musical timelines in real time.*
+
 ---
 
 ### Reset Modulation Button 
@@ -491,7 +495,7 @@ public void ResetModulations()
     isNewStroke = true;
 }
 ```
-*Figure 16. C# implementation of the ResetModulations framework, where state-validated guard clauses trigger a local parameter rollback, force baseline defaults directly into the active FMOD instance, and completely flush the visual drawing canvas.*
+*Figure 17. C# implementation of the ResetModulations framework, where state-validated guard clauses trigger a local parameter rollback, force baseline defaults directly into the active FMOD instance, and completely flush the visual drawing canvas.*
 
 #### Encountered Issues & Debugging
 
@@ -506,6 +510,10 @@ To ensure a seamless visual and acoustic reset, the cleanup workflow was refacto
 
 * **Forced Instance Parameter Flushes:** Rather than relying on conditional update loops, the `ResetModulations()` method was updated to push a hardcoded block of baseline defaults ($0.0$ for audio effects, and a balanced $0.5$ for spatial panning) directly into the active `musicInstance` to immediately neutralize the DSP engine.
 * **Geometric Garbage Collection:** A reference tracking collection (`List<LineRenderer> allStrokes`) was introduced to monitor every active stroke generated on the canvas. On reset, the method iterates through this list, executes a `Destroy()` sequence on each instantiated stroke GameObject, flushes the list, and resets the path flag (`isNewStroke = true`) to clean the canvas and reclaim runtime memory.
+
+https://github.com/user-attachments/assets/855358f3-b05c-478d-a5d2-fe8e11b76cfd
+
+*Figure 18. Runtime demonstration of the hardware Reset Modulations button, where pressing the designated console pad triggers an instant garbage collection purge of all instantiated LineRenderer stroke geometry while simultaneously flushing active FMOD DSP parameters back to baseline neutral positions for a clean performance slate.*
 
 ---
 
@@ -553,7 +561,7 @@ public void TogglePlayback()
     }
 }
 ```
-*Figure 17. C# implementation of the TogglePlayback state machine, where FMOD API queries evaluate audio runtime states to handle cold-boot lighting routines, toggle active engine playback, and dynamically update the physical button's emissive glow.*
+*Figure 19. C# implementation of the TogglePlayback state machine, where FMOD API queries evaluate audio runtime states to handle cold-boot lighting routines, toggle active engine playback, and dynamically update the physical button's emissive glow.*
 
 #### Encountered Issues & Debugging
 
