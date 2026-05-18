@@ -782,8 +782,6 @@ The testing process was structured around four primary objectives:
 
 The feedback collected from the 5 participants yielded specific insights into the user experience, interest, and value of Auraline. 
 
-> *Note: The graphs below are generated using Mermaid.js and will render natively as visual charts on GitHub.*
-
 ### Q1: Was it too difficult to figure out the purpose of the tool?
 * **Yes:** 4 users (80%)
 * **No:** 1 user (20%)
