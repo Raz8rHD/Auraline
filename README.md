@@ -9,6 +9,10 @@
 ## Project Overview
 Auraline is an interactive application exploring the intersection of psychology, visual art, and audio perception. Inspired by historical graphic notation systems like the **Xenakis UPIC** and the **Oramics Machine**, it allows users to modulate sound through intuitive line-drawing on a digital drum pad interface.
 
+## Video Demonstration
+
+https://github.com/user-attachments/assets/60c8c2ab-89fc-46c7-81ea-6fccdc472091
+
 ## Key Features
 *   **Dynamic Drum Pad Interface:** A 2D interactive model built in Unity allowing for direct audio manipulation.
 *   **Atmospheric Power-Up Sequence:** A theatrical 5-second lighting delay that builds tension before the session begins.
@@ -16,6 +20,7 @@ Auraline is an interactive application exploring the intersection of psychology,
 *   **Reactive Visuals:** Custom material emission toggles and pulsing button states that respond to FMOD playback states.
 
 ---
+
 ## Documentation & Scripts
 *   [Development Journal](Documents/DevelopmentCommentary.md)
 *   [Scripts](Documents/Scripts)
