@@ -747,3 +747,112 @@ https://github.com/user-attachments/assets/64d6df3d-8edb-4d46-9675-3800c66a25c9
 ---
 
 ## Testing
+
+## 1. Type of Testing Conducted
+
+The project underwent **User Testing** (specifically, **observational usability testing**). 
+
+### Methodology
+* **Setup:** The laptop was passed directly to participants with the project actively open in play mode.
+* **Observation:** The playback was initiated by the tester, after which participants were left to independently navigate and decipher the tool without initial instructions or guidance.
+* **Data Capture:** Interaction friction, successes, and natural behavioral patterns were recorded via real-time note-taking, followed by a qualitative feedback interview.
+
+---
+
+## 2. Key Goals in Testing
+
+The testing process was structured around four primary objectives:
+
+* **Assess Intuitiveness:** Determine if the user interface and core mechanics are self-explanatory to a first-time user.
+* **Identify Feature Gaps:** Uncover critical missing elements or friction points needed to elevate the tool to a professional standard.
+* **Gauge Value & Engagement:** Pinpoint the most successful core features and measure overall user enjoyment.
+* **Determine Market & Distribution Strategy:** Evaluate potential adoption rates and gather user perspectives on open-source, free, or premium monetization models.
+
+---
+
+## 3. Observations and Learning (Data Breakdown)
+
+The feedback collected from the 5 participants yielded specific insights into the user experience, interest, and value of Auraline. 
+
+> *Note: The graphs below are generated using Mermaid.js and will render natively as visual charts on GitHub.*
+
+### Q1: Was it too difficult to figure out the purpose of the tool?
+* **Yes:** 4 users (80%)
+* **No:** 1 user (20%)
+
+```mermaid
+pie title Was it too difficult to figure out the purpose?
+    "Yes" : 4
+    "No" : 1
+```
+*Figure 37. The vast majority (80%) of testers found the tool's purpose difficult to grasp initially, reflecting a clear need for intuitive onboarding and a more streamlined user experience design.*
+
+---
+
+### Q2: What is the tool missing to bring it to a higher standard?
+* **A Tutorial:** 3 users
+* **UI Cleanup (Remove unused buttons):** 1 user
+* **More Music/Audio Variety:** 1 user
+
+``` mermaid
+pie title Identified Feature Gaps
+    "A Tutorial" : 3
+    "UI Cleanup" : 1
+    "More Music/Audio" : 1
+```
+*Figure 38. Over half (60%) of testers identified the lack of a tutorial as the primary feature gap, reflecting a strong demand for foundational user guidance over interface cleanup or asset expansion.*
+
+---
+
+### Q3: If met with the opportunity, would you consider using this tool?
+* **Yes:** 2 users (40%)
+* **Maybe (Dependent on more development):** 2 users (40%)
+* **Undecided:** 1 user (20%)
+
+``` mermaid
+pie title Future Usage Consideration
+    "Yes" : 2
+    "Maybe" : 2
+    "Undecided" : 1
+```
+*Figure 39. A combined 80% of testers expressed immediate or potential interest in using the tool, with an equal split (40% each) between definite adoption and conditional interest based on further development.*
+
+---
+
+### Core Successes (Favorite Features)
+
+When asked about their favorite components, users highlighted sensory, visual, and tactile feedback:
+
+* The **drawing mechanics**.
+* The absolute creative freedom of **real-time sound modification**.
+* The **atmospheric progression** (specifically noting how much they enjoyed that it starts in a mysterious way and lights up during interaction).
+
+---
+
+### Monetization Preferences
+
+* **Paid (Premium):** 2 users (conditioned on continued development).
+* **Free:** 2 users (preferred free access but emphasized that the creator must be thoroughly credited).
+* **Undecided:** 1 user.
+
+``` mermaid
+pie title Distribution & Monetization Preferences
+    "Paid (With More Dev)" : 2
+    "Free (With Creator Credit)" : 2
+    "Undecided" : 1
+```
+*Figure 40. Testers were evenly divided on monetization preferences, with an equal split (40% each) between a premium model tied to ongoing development and a free release focused on proper creator accreditation.*
+
+---
+
+## 4. How Testing Influenced the Final Result
+
+The user feedback directly shaped the development roadmap and distribution strategy for Auraline, resulting in several concrete changes:
+
+*   **Onboarding & UX Overhaul:** Since 80% of users found the tool's purpose difficult to grasp, the UI was streamlined into a simplistic, minimal design. To address the heavy demand for a tutorial without breaking immersion, **environmental visual cues** were integrated—such as a *ghost pen*, *emissive materials*, and *dynamic on/off pad states*—guiding the user naturally instead of using rigid text instructions.
+*   **Quality Polish:** Immediate action was taken to clean up the workspace by removing unused buttons, pushing Auraline to a more professional standard within the scope of available resources. Produced more audio tracks due to only having two tracks and wanted to avoid repetition or a underwhelming game loop.
+*   **Preserving the Core Appeal:** The features that users found most engaging—the drawing tools, audio freedom, and progressive lighting aesthetics—were left untouched to preserve the tool's unique identity.
+*   **Distribution Strategy:** Balancing the split opinions on pricing and credit, the decision was made to open-source the project via a **GitHub Repository** and launch the tool publicly on **Itch.io**, satisfying both the desire for accessibility/creditation and the framework for future indie distribution.
+
+---
+
