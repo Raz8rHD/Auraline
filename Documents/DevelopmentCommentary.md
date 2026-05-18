@@ -746,6 +746,14 @@ https://github.com/user-attachments/assets/64d6df3d-8edb-4d46-9675-3800c66a25c9
 
 ---
 
+### Track 4 & 5
+
+These tracks have been produced using the Logic Pro loop library. Unfortunately, I have lost the Logic projects since they were done sometime around the first semester for the smaller weekly projects. I decided to reuse the audio files from the repositories (I have spent a good amount of time digging through repositories) to increase the number of tracks for Auraline. 
+
+Apologies for the lack of information regarding these two tracks. They might be sloppy but I can guarantee they are human slop and not AI.
+
+---
+
 ## Testing
 
 ## 1. Type of Testing Conducted
@@ -873,3 +881,50 @@ The user feedback directly shaped the development roadmap and distribution strat
 * **Defensive Engineering for Stream Data:** The emergence of frozen DSP filter trails and "ghost stroke" geometry buildup exposed vulnerabilities in handling continuous real-time pointer coordinates. Implementing explicit geometric garbage collection routines and hardcoded fallback parameter flushes from the initial framework design would have saved significant debugging time.
 * **Mitigating Early Hardware Bottlenecks:** Relying solely on a laptop trackpad and keyboard during early arrangement phases restricted initial creative prototyping. Securing physical MIDI controllers and external tactile drawing interfaces earlier in the development lifecycle would have prevented a simplified early production loop.
 * **Future Technical Scaling:** Given more development time, migrating from fixed audio samples toward fully integrated, real-time procedural sound generation modules—similar to professional suites like Tsugi—would vastly expand the application's sonic expressiveness. Moving beyond mouse inputs to natively support multi-touch mobile environments or physical drawing tablets would fully realize the historical, gesture-driven legacy of the Xenakis UPIC framework.
+
+---
+
+# Bibliography
+
+* **A$AP Rocky** (2024a) *Don't Be Dumb* [Audio Album]. At: [https://open.spotify.com/album/4itKk52E9ZCdWUQcFAkud9](https://open.spotify.com/album/4itKk52E9ZCdWUQcFAkud9) (Accessed 18/05/2026).
+* **A$AP Rocky** (2024b) 'Robbery', *Don't Be Dumb* [Audio Track]. At: [https://open.spotify.com/track/5FYaSV8TLF7qvonB1BDOw0?si=9f1564e781c746c7](https://open.spotify.com/track/5FYaSV8TLF7qvonB1BDOw0?si=9f1564e781c746c7) (Accessed 18/05/2026).
+* **Bad Bunny** (2024a) *DeBI TiRAR MaS FOToS* [Audio Album]. At: [https://open.spotify.com/album/5K79FLRUCSysQnVESLcTdb](https://open.spotify.com/album/5K79FLRUCSysQnVESLcTdb) (Accessed 18/05/2026).
+* **Bad Bunny** (2024b) 'BAILE INoLVIDABLE', *DeBI TiRAR MaS FOToS* [Audio Track]. At: [https://open.spotify.com/track/2lTm559tuIvatlT1u0JYG2?si=eb7db82be37449fe](https://open.spotify.com/track/2lTm559tuIvatlT1u0JYG2?si=eb7db82be37449fe) (Accessed 18/05/2026).
+* **Daft Punk** (2001) *Discovery* [Audio Album]. At: [https://open.spotify.com/album/2noRn2Aes5aoNVsU6iWThc](https://open.spotify.com/album/2noRn2Aes5aoNVsU6iWThc) (Accessed 18/05/2026).
+* **Després, A.** (2020) 'The UPIC: Towards a Pedagogy of Creativity'. In: Weibel, P., Brümmer, L. and Kanach, S. (eds.) *From Xenakis's UPIC to Graphic Notation Today*. Berlin: Hatje Cantz Verlag, pp. 142–159. At: [https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today](https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today) (Accessed 18/05/2026).
+* **Firelight Technologies** (2024a) *FMOD Studio Unity Integration Documentation: RuntimeManager API*. At: [https://www.fmod.com/docs/2.03/unity/api-runtimemanager.html](https://www.fmod.com/docs/2.03/unity/api-runtimemanager.html) (Accessed 18/05/2026).
+* **Firelight Technologies** (2024b) *FMOD Studio API Reference: EventInstance Playback State Enumerations*. At: [https://www.fmod.com/docs/2.03/api/studio-api-eventinstance.html#studio-playback-state](https://www.fmod.com/docs/2.03/api/studio-api-eventinstance.html#studio-playback-state) (Accessed 18/05/2026).
+* **Firelight Technologies** (2024c) *FMOD Studio Unity Integration Package: StudioEventEmitter Lifecycle Architecture*. At: [https://www.fmod.com/docs/2.03/unity/api-studioeventemitter.html](https://www.fmod.com/docs/2.03/unity/api-studioeventemitter.html) (Accessed 18/05/2026).
+* **Firelight Technologies** (2024d) *FMOD Studio Concepts Manual: Events Framework*. At: [https://www.fmod.com/docs/2.03/studio/fmod-studio-concepts.html](https://www.fmod.com/docs/2.03/studio/fmod-studio-concepts.html) (Accessed 18/05/2026).
+* **Firelight Technologies** (2024e) *FMOD Studio Instruments Manual: Authoring Nested Events*. At: [https://www.fmod.com/docs/2.03/studio/authoring-events.html#nested-events](https://www.fmod.com/docs/2.03/studio/authoring-events.html#nested-events) (Accessed 18/05/2026).
+* **FMOD Q&A Forum** (2024) *Lots of warnings in Unity 6.2 (TreeView Deprecation CS0618)*. At: [https://qa.fmod.com/t/lots-of-warnings-in-unity-6-2/23701](https://qa.fmod.com/t/lots-of-warnings-in-unity-6-2/23701) (Accessed 18/05/2026).
+* **Kanye West** (2007) *Graduation* [Audio Album]. At: [https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3](https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3) (Accessed 18/05/2026).
+* **Kanye West** (2013) *Yeezus* [Audio Album]. At: [https://open.spotify.com/album/7D2NdGvBHIavgLhmcwhluK](https://open.spotify.com/album/7D2NdGvBHIavgLhmcwhluK) (Accessed 18/05/2026).
+* **Kanye West** (2024) *BULLY* [Audio Album]. At: [https://open.spotify.com/album/5poA9SAx0Xiz1cf17fWBLS](https://open.spotify.com/album/5poA9SAx0Xiz1cf17fWBLS) (Accessed 18/05/2026).
+* **Nascimento, M. and Borges, L.** (1972) *Clube da Esquina* [Audio Album]. Wikipedia. At: [https://en.wikipedia.org/wiki/Clube_da_Esquina_(album)](https://en.wikipedia.org/wiki/Clube_da_Esquina_%28album%29) (Accessed 18/05/2026).
+* **Nystrom, R.** (2014) 'Component Pattern', *Game Programming Patterns*. At: [https://gameprogrammingpatterns.com/component.html](https://gameprogrammingpatterns.com/component.html) (Accessed 18/05/2026).
+* **Pietruszewski, M.** (2020) 'The Digital Instrument as an Artefact'. In: Weibel, P., Brümmer, L. and Kanach, S. (eds.) *From Xenakis's UPIC to Graphic Notation Today*. Berlin: Hatje Cantz Verlag. At: [https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today](https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today) (Accessed 18/05/2026).
+* **Scordato, J.** (2020) 'Macro-Form Notation and Vector Architectures'. In: Weibel, P., Brümmer, L. and Kanach, S. (eds.) *From Xenakis's UPIC to Graphic Notation Today*. Berlin: Hatje Cantz Verlag. At: [https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today](https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today) (Accessed 18/05/2026).
+* **Spence, C.** (2011) 'Crossmodal correspondences: A tutorial review', *Attention, Perception, & Psychophysics*, 73(4), pp. 971–995. At: [https://link.springer.com/article/10.3758/s13414-010-0073-7](https://link.springer.com/article/10.3758/s13414-010-0073-7) (Accessed 18/05/2026).
+* **Spotify** (2026) *Spotify Music Streaming Interface and Discovery Frameworks*. At: [https://www.spotify.com](https://www.spotify.com) (Accessed 18/05/2026).
+* **Synth and Software** (2022) *Draw Motion SFX with a Mouse: Tsugi DSP Motion and DSP Action Review*. At: [https://synthandsoftware.com/2022/11/draw-motion-sfx-with-a-mouse-tsugi-dsp-motion-and-dsp-action/](https://synthandsoftware.com/2022/11/draw-motion-sfx-with-a-mouse-tsugi-dsp-motion-and-dsp-action/) (Accessed 18/05/2026).
+* **The Movie DB** (2026) *Márcio Borges Biography and Profile Credits*. At: [https://www.themoviedb.org/person/4059612-marcio-borges](https://www.themoviedb.org/person/4059612-marcio-borges) (Accessed 18/05/2026).
+* **Tracklib** (2026) *Tracklib Automated Audio Sample Clearance & Crate-Digging Platform*. At: [https://www.tracklib.com/](https://www.tracklib.com/) (Accessed 18/05/2026).
+* **Tsugi Studio** (2020) *Tsugi DSP Action and DSP Motion Product Suite: Procedural Gestural Interface Sketch Pad*. At: [https://tsugi-studio.com/web/en/products-dspmotion.html](https://tsugi-studio.com/web/en/products-dspmotion.html) (Accessed 18/05/2026).
+* **Unity Discussions** (2024) *When Unity is going to remove obsolete properties from Component class*. At: [https://discussions.unity.com/t/when-unity-is-going-to-remove-obsolete-properties-from-component-class/757365](https://discussions.unity.com/t/when-unity-is-going-to-remove-obsolete-properties-from-component-class/757365) (Accessed 18/05/2026).
+* **Unity Technologies** (2024a) *Unity Advanced Programming and Code Architecture Manual*. At: [https://unity.com/how-to/advanced-programming-and-code-architecture](https://unity.com/how-to/advanced-programming-and-code-architecture) (Accessed 18/05/2026).
+* **Unity Technologies** (2024b) *Unity User Manual: Core Infrastructure Lifecycle documentation*. At: [https://docs.unity3d.com/Manual/index.html](https://docs.unity3d.com/Manual/index.html) (Accessed 18/05/2026).
+* **Unity Technologies** (2024c) *Unity User Manual: Time Slicing & Coroutines Lifecycle*. At: [https://docs.unity3d.com/Manual/Coroutines.html](https://docs.unity3d.com/Manual/Coroutines.html) (Accessed 18/05/2026).
+* **Unity Technologies** (2024d) *Unity Scripting API: Material.SetColor Shader Property Protocols*. At: [https://docs.unity3d.com/ScriptReference/Material.SetColor.html](https://docs.unity3d.com/ScriptReference/Material.SetColor.html) (Accessed 18/05/2026).
+* **Unity Technologies** (2024e) *Unity User Manual: TrailRenderer Geometry Component behaviors*. At: [https://docs.unity3d.com/Manual/class-TrailRenderer.html](https://docs.unity3d.com/Manual/class-TrailRenderer.html) (Accessed 18/05/2026).
+* **Unity Technologies** (2024f) *Unity Scripting API: InitializeOnLoadAttribute Assembly Automation*. At: [https://docs.unity3d.com/ScriptReference/InitializeOnLoadAttribute.html](https://docs.unity3d.com/ScriptReference/InitializeOnLoadAttribute.html) (Accessed 18/05/2026).
+* **WaveInformer** (2024) *Tsugi Software Procedural Audio Models and Continuous Graphic Modifiers*. At: [https://waveinformer.com/2024/02/27/tsugi-software/](https://waveinformer.com/2024/02/27/tsugi-software/) (Accessed 18/05/2026).
+* **Weibel, P., Brümmer, L. and Kanach, S. (eds.)** (2020) *From Xenakis's UPIC to Graphic Notation Today*. Berlin: Hatje Cantz Verlag. At: [https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today](https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today) (Accessed 18/05/2026).
+* **Wikipedia** (2025) *Lô Borges Discography and History*. At: [https://en.wikipedia.org/wiki/Lô_Borges](https://en.wikipedia.org/wiki/L%C3%B4_Borges) (Accessed 18/05/2026).
+* **Wikipedia** (2026a) *Oramics Machine Electronic Synthesis Historic System*. At: [https://en.wikipedia.org/wiki/Oramics](https://en.wikipedia.org/wiki/Oramics) (Accessed 18/05/2026).
+* **Wikipedia** (2026b) *UPIC (Unité Polyagogique Informatique du CEMAMu) Framework History*. At: [https://en.wikipedia.org/wiki/UPIC](https://en.wikipedia.org/wiki/UPIC) (Accessed 18/05/2026).
+* **YouTube** (2026) *YouTube Video Hosting and Stream Acquisition Platform*. At: [https://www.youtube.com](https://www.youtube.com) (Accessed 18/05/2026).
+
+---
+
+## Declared Assets
