@@ -857,3 +857,19 @@ The user feedback directly shaped the development roadmap and distribution strat
 ---
 
 ## Critical Reflection
+
+### What went well?
+
+* **Architectural Decoupling and Performance:** Separating the 2D interaction layers from the FMOD execution pipeline successfully eliminated systemic performance bottlenecks. This modular C# structure delivered a highly optimized, high-framerate rendering pipeline that performed flawlessly on portable hardware like a MacBook Air.
+* **Intuitive Crossmodal Synergy:** The multi-parameter mapping matrix validated cognitive psychology frameworks by seamlessly linking vertical space to wet reverb levels and horizontal vectors to spatial panning and stereo width. Incorporating speed-responsive distortion loops added a layer of kinetic friction that made the zero-HUD drawing canvas feel tactile and responsive.
+* **Studio Economics and Production:** Pre-studio digital crate-digging on Tracklib turned limited UCA studio booking windows into a highly efficient execution phase. This disciplined workflow maximized physical gear usage and yielded distinct, high-fidelity sample-driven compositions that elevated the application's sonic palette.
+* **Agile Response to User Testing:** Transforming a glaring usability defect—where 80% of testers found the tool's purpose ambiguous—into an immersive onboarding system was a major triumph. Implementing the text-free "Ghost Pen" and sequential emissive breadcrumbs elegantly resolved user friction while completely preserving the project's minimalist aesthetic.
+
+---
+
+### What could be improved or done differently next time?
+
+* **Proactive Parameter Mapping:** Early engine integration was bottlenecked by a critical scope mismatch between Unity’s global C# calls and FMOD’s local variable configurations. Mapping out a strict structural blueprint of all middleware API boundaries during the pre-production phase would prevent similar compile-time friction.
+* **Defensive Engineering for Stream Data:** The emergence of frozen DSP filter trails and "ghost stroke" geometry buildup exposed vulnerabilities in handling continuous real-time pointer coordinates. Implementing explicit geometric garbage collection routines and hardcoded fallback parameter flushes from the initial framework design would have saved significant debugging time.
+* **Mitigating Early Hardware Bottlenecks:** Relying solely on a laptop trackpad and keyboard during early arrangement phases restricted initial creative prototyping. Securing physical MIDI controllers and external tactile drawing interfaces earlier in the development lifecycle would have prevented a simplified early production loop.
+* **Future Technical Scaling:** Given more development time, migrating from fixed audio samples toward fully integrated, real-time procedural sound generation modules—similar to professional suites like Tsugi—would vastly expand the application's sonic expressiveness. Moving beyond mouse inputs to natively support multi-touch mobile environments or physical drawing tablets would fully realize the historical, gesture-driven legacy of the Xenakis UPIC framework.
