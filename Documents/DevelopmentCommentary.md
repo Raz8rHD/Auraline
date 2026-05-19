@@ -593,10 +593,10 @@ To establish a rich, authentic musical footprint for **Auraline**, I chose to an
 #### Maximizing Studio Economics
 This approach was highly intentional. Because my physical studio booking windows were strictly limited, I couldn't afford to lose expensive on-clock hours staring at an empty DAW grid or blindly clicking through plugin presets. I wanted to treat my studio time purely as an **execution phase**—a focused window dedicated entirely to heavy tracking, routing raw signals through physical analog hardware, and optimizing final multi-track arrangements. 
 
-By handling the sample-hunting phase during my free time outside the studio, I walked into every session with a definitive structural blueprint. This ensured that every minute of available studio gear access was utilized with maximum efficiency.
+By handling the sample-hunting phase during my free time outside the studio, I walked into every session with a definitive structural blueprint. This ensured that every minute of available studio gear access was utilized with maximum efficiency, mirroring professional workflows where meticulous preparation underpins the execution of a recording session ([Ahmed, Benford and Crabtree, 2012](https://doi.org/10.1145/2207676.2208314)).
 
 #### The Art of the Sample Wrap
-Leaning heavily into sampling, trimming, and rearranging old melodies is a deep personal passion of mine. There is a distinct creative satisfaction in unearthing a hidden legacy melody, slicing its transients, and building an entirely fresh, modern production wrapped tightly around the soul of the original sample. This design philosophy pairs perfectly with Auraline’s physical aesthetic: taking something historical and static and translating it into a highly dynamic, real-time interactive user experience.
+Leaning heavily into sampling, trimming, and rearranging old melodies is a deep personal passion of mine. There is a distinct creative satisfaction in unearthing a hidden legacy melody, slicing its transients, and building an entirely fresh, modern production wrapped tightly around the soul of the original sample. As an exploratory practice, the unique value of an obscure record can often reside entirely within a single vocal hook, melodic select, or specific drum transient ([Ahmed, Benford and Crabtree, 2012](https://doi.org/10.1145/2207676.2208314)). This design philosophy pairs perfectly with Auraline’s physical aesthetic: taking something historical and static and translating it into a highly dynamic, real-time interactive user experience.
 
 ---
 
