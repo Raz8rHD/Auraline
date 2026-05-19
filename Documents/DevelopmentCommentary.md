@@ -896,7 +896,9 @@ The user feedback directly shaped the development roadmap and distribution strat
 * **Firelight Technologies** (2024c) *FMOD Studio Unity Integration Package: StudioEventEmitter Lifecycle Architecture*. At: [https://www.fmod.com/docs/2.03/unity/api-studioeventemitter.html](https://www.fmod.com/docs/2.03/unity/api-studioeventemitter.html) (Accessed 18/05/2026).
 * **Firelight Technologies** (2024d) *FMOD Studio Concepts Manual: Events Framework*. At: [https://www.fmod.com/docs/2.03/studio/fmod-studio-concepts.html](https://www.fmod.com/docs/2.03/studio/fmod-studio-concepts.html) (Accessed 18/05/2026).
 * **Firelight Technologies** (2024e) *FMOD Studio Instruments Manual: Authoring Nested Events*. At: [https://www.fmod.com/docs/2.03/studio/authoring-events.html#nested-events](https://www.fmod.com/docs/2.03/studio/authoring-events.html#nested-events) (Accessed 18/05/2026).
+* **Firelight Technologies** (2026) *FMOD Studio Audio Engine*. At: [https://www.fmod.com](https://www.fmod.com) (Accessed 19/05/2026).
 * **FMOD Q&A Forum** (2024) *Lots of warnings in Unity 6.2 (TreeView Deprecation CS0618)*. At: [https://qa.fmod.com/t/lots-of-warnings-in-unity-6-2/23701](https://qa.fmod.com/t/lots-of-warnings-in-unity-6-2/23701) (Accessed 18/05/2026).
+* **Google** (2026) *Gemini Web Interface*. At: [https://gemini.google.com/app](https://gemini.google.com/app) (Accessed 19/05/2026).
 * **Kanye West** (2007) *Graduation* [Audio Album]. At: [https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3](https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3) (Accessed 18/05/2026).
 * **Kanye West** (2013) *Yeezus* [Audio Album]. At: [https://open.spotify.com/album/7D2NdGvBHIavgLhmcwhluK](https://open.spotify.com/album/7D2NdGvBHIavgLhmcwhluK) (Accessed 18/05/2026).
 * **Kanye West** (2024) *BULLY* [Audio Album]. At: [https://open.spotify.com/album/5poA9SAx0Xiz1cf17fWBLS](https://open.spotify.com/album/5poA9SAx0Xiz1cf17fWBLS) (Accessed 18/05/2026).
@@ -917,11 +919,13 @@ The user feedback directly shaped the development roadmap and distribution strat
 * **Unity Technologies** (2024d) *Unity Scripting API: Material.SetColor Shader Property Protocols*. At: [https://docs.unity3d.com/ScriptReference/Material.SetColor.html](https://docs.unity3d.com/ScriptReference/Material.SetColor.html) (Accessed 18/05/2026).
 * **Unity Technologies** (2024e) *Unity User Manual: TrailRenderer Geometry Component behaviors*. At: [https://docs.unity3d.com/Manual/class-TrailRenderer.html](https://docs.unity3d.com/Manual/class-TrailRenderer.html) (Accessed 18/05/2026).
 * **Unity Technologies** (2024f) *Unity Scripting API: InitializeOnLoadAttribute Assembly Automation*. At: [https://docs.unity3d.com/ScriptReference/InitializeOnLoadAttribute.html](https://docs.unity3d.com/ScriptReference/InitializeOnLoadAttribute.html) (Accessed 18/05/2026).
+* **Unity Technologies** (2024g) *ProBuilder Manual*. At: [https://docs.unity3d.com/Packages/com.unity.probuilder@6.0/manual/index.html](https://docs.unity3d.com/Packages/com.unity.probuilder@6.0/manual/index.html) (Accessed 19/05/2026).
+* **Unity Technologies** (2026) *Unity Game Engine*. At: [https://unity.com](https://unity.com) (Accessed 19/05/2026).
 * **WaveInformer** (2024) *Tsugi Software Procedural Audio Models and Continuous Graphic Modifiers*. At: [https://waveinformer.com/2024/02/27/tsugi-software/](https://waveinformer.com/2024/02/27/tsugi-software/) (Accessed 18/05/2026).
 * **Weibel, P., Brümmer, L. and Kanach, S. (eds.)** (2020) *From Xenakis's UPIC to Graphic Notation Today*. Berlin: Hatje Cantz Verlag. At: [https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today](https://zkm.de/en/from-xenakiss-upic-to-graphic-notation-today) (Accessed 18/05/2026).
 * **Wikipedia** (2025) *Lô Borges Discography and History*. At: [https://en.wikipedia.org/wiki/Lô_Borges](https://en.wikipedia.org/wiki/L%C3%B4_Borges) (Accessed 18/05/2026).
-* **Wikipedia** (2026a) *Oramics Machine Electronic Synthesis Historic System*. At: [https://en.wikipedia.org/wiki/Oramics](https://en.wikipedia.org/wiki/Oramics) (Accessed 18/05/2026).
 * **Wikipedia** (2026) *Thelonious Monk Discography and History*. At: [https://en.wikipedia.org/wiki/Thelonious_Monk](https://en.wikipedia.org/wiki/Thelonious_Monk) (Accessed 18/05/2026).
+* **Wikipedia** (2026a) *Oramics Machine Electronic Synthesis Historic System*. At: [https://en.wikipedia.org/wiki/Oramics](https://en.wikipedia.org/wiki/Oramics) (Accessed 18/05/2026).
 * **Wikipedia** (2026b) *UPIC (Unité Polyagogique Informatique du CEMAMu) Framework History*. At: [https://en.wikipedia.org/wiki/UPIC](https://en.wikipedia.org/wiki/UPIC) (Accessed 18/05/2026).
 * **YouTube** (2026) *YouTube Video Hosting and Stream Acquisition Platform*. At: [https://www.youtube.com](https://www.youtube.com) (Accessed 18/05/2026).
 
