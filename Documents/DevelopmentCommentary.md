@@ -886,7 +886,7 @@ The user feedback directly shaped the development roadmap and distribution strat
 
 * **A$AP Rocky** (2024a) *Don't Be Dumb* [Audio Album]. At: [https://open.spotify.com/album/4itKk52E9ZCdWUQcFAkud9](https://open.spotify.com/album/4itKk52E9ZCdWUQcFAkud9) (Accessed 18/05/2026).
 * **A$AP Rocky** (2024b) 'Robbery', *Don't Be Dumb* [Audio Track]. At: [https://open.spotify.com/track/5FYaSV8TLF7qvonB1BDOw0?si=9f1564e781c746c7](https://open.spotify.com/track/5FYaSV8TLF7qvonB1BDOw0?si=9f1564e781c746c7) (Accessed 18/05/2026).
-* * **Ahmed, A., Benford, S. and Crabtree, A.** (2012) 'Digging in the crates', *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems*, pp. 3221–3230. At: [https://doi.org/10.1145/2207676.2208314](https://doi.org/10.1145/2207676.2208314) (Accessed 19/05/2026).
+* **Ahmed, A., Benford, S. and Crabtree, A.** (2012) 'Digging in the crates', *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems*, pp. 3221–3230. At: [https://doi.org/10.1145/2207676.2208314](https://doi.org/10.1145/2207676.2208314) (Accessed 19/05/2026).
 * **Bad Bunny** (2024a) *DeBI TiRAR MaS FOToS* [Audio Album]. At: [https://open.spotify.com/album/5K79FLRUCSysQnVESLcTdb](https://open.spotify.com/album/5K79FLRUCSysQnVESLcTdb) (Accessed 18/05/2026).
 * **Bad Bunny** (2024b) 'BAILE INoLVIDABLE', *DeBI TiRAR MaS FOToS* [Audio Track]. At: [https://open.spotify.com/track/2lTm559tuIvatlT1u0JYG2?si=eb7db82be37449fe](https://open.spotify.com/track/2lTm559tuIvatlT1u0JYG2?si=eb7db82be37449fe) (Accessed 18/05/2026).
 * **Daft Punk** (2001) *Discovery* [Audio Album]. At: [https://open.spotify.com/album/2noRn2Aes5aoNVsU6iWThc](https://open.spotify.com/album/2noRn2Aes5aoNVsU6iWThc) (Accessed 18/05/2026).
