@@ -748,7 +748,7 @@ https://github.com/user-attachments/assets/64d6df3d-8edb-4d46-9675-3800c66a25c9
 
 ### Track 4 & 5
 
-These tracks have been produced using the Logic Pro loop library. Unfortunately, I have lost the Logic projects since they were done sometime around the first semester for the smaller weekly projects. I decided to reuse the audio files from the repositories (I have spent a good amount of time digging through repositories) to increase the number of tracks for Auraline. 
+These tracks have been produced using the Logic Pro loop library. Unfortunately, I have lost the Logic projects since they were done sometime around the first semester for the smaller weekly projects. I decided to reuse the audio files from the repositories because they were using procedural audio in FMOD (I have spent a good amount of time digging through repositories) and an interesting pick for Auraline. 
 
 Apologies for the lack of information regarding these two tracks. They might be sloppy but I can guarantee they are human slop and not AI.
 
