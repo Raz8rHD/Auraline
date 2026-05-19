@@ -163,7 +163,7 @@ This high-fidelity mock-up serves as my definitive UI anchor, defining the spati
 
 ---
 
-### Using Pro Builder
+### Using [Pro Builder](https://docs.unity3d.com/Packages/com.unity.probuilder@6.0/manual/index.html)
 
 While Unity’s primitive 3D shapes worked for a basic block-out, they quickly became a bottleneck for the **Auraline** chassis. Fabricating the recessed screen, sloped panel indents, and edge bevels by nesting and scaling dozens of separate primitive GameObjects cluttered the hierarchy and restricted our texture mapping.
 
