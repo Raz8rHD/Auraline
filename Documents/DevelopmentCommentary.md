@@ -647,6 +647,12 @@ I have spent one full day of the week for three consecutives weeks in the studio
 
 ## Logic Tracks
 
+### Using Logic
+
+Operating on a MacBook Air meant that hardware efficiency and CPU overhead were primary concerns during the production phase. [Logic Pro](https://www.apple.com/logic-pro/) [(Apple Inc., 2026b)](https://www.apple.com/logic-pro/) was chosen as the central digital audio workstation (DAW) because of its native optimization for Apple Silicon architecture, which allows for high track counts and intensive DSP plugin processing without triggering system overloads on portable hardware. Furthermore, as an industry-standard package, it provides a comprehensive, highly optimized suite of stock instruments and mixing tools right out of the box, offering immense value without the need to immediately invest in expensive third-party plugins [(MusicRadar, 2026)](https://www.musicradar.com/music-tech/daws/experienced-producers-might-feel-uneasy-about-the-focus-being-put-so-heavily-on-ai-and-the-session-players-but-its-still-an-instant-recommendation-apple-logic-pro-for-mac-12-and-logic-pro-for-ipad-3-review).
+
+Beyond hardware optimization, prior familiarity with the software dictated this choice. Having utilized the Logic Pro ecosystem and its extensive loop library during the first semester for smaller weekly projects, returning to this environment bypassed a steep technical learning curve. Working within a known framework allowed me to immediately execute the advanced sidechaining, vocal chopping, and spatial routing techniques required for the Auraline soundtrack, maximizing the efficiency of the limited UCA studio booking windows.
+
 ### Track 1 
 
 The track is built around a heavy juxtaposition of raw, organic textures and highly processed, synthetic space. It utilizes a soulful, expressive vocal acapella sample as both the emotional centerpiece and a rhythmic instrument, suspended over a lush ambient pad and a classic lo-fi vinyl texture. The driving force of the track's movement is a pronounced sidechain pumping effect that introduces a rhythmic pulse, even when explicit percussion elements recede.
@@ -906,6 +912,7 @@ The user feedback directly shaped the development roadmap and distribution strat
 * **Kanye West** (2007) *Graduation* [Audio Album]. At: [https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3](https://open.spotify.com/album/4SZko61aMnmgvNhfhgTuD3) (Accessed 18/05/2026).
 * **Kanye West** (2013) *Yeezus* [Audio Album]. At: [https://open.spotify.com/album/7D2NdGvBHIavgLhmcwhluK](https://open.spotify.com/album/7D2NdGvBHIavgLhmcwhluK) (Accessed 18/05/2026).
 * **Kanye West** (2024) *BULLY* [Audio Album]. At: [https://open.spotify.com/album/5poA9SAx0Xiz1cf17fWBLS](https://open.spotify.com/album/5poA9SAx0Xiz1cf17fWBLS) (Accessed 18/05/2026).
+* **MusicRadar** (2026) *Apple Logic Pro for Mac 12 and Logic Pro for iPad 3 review*. At: [https://www.musicradar.com/music-tech/daws/experienced-producers-might-feel-uneasy-about-the-focus-being-put-so-heavily-on-ai-and-the-session-players-but-its-still-an-instant-recommendation-apple-logic-pro-for-mac-12-and-logic-pro-for-ipad-3-review](https://www.musicradar.com/music-tech/daws/experienced-producers-might-feel-uneasy-about-the-focus-being-put-so-heavily-on-ai-and-the-session-players-but-its-still-an-instant-recommendation-apple-logic-pro-for-mac-12-and-logic-pro-for-ipad-3-review) (Accessed 19/05/2026).
 * **Nascimento, M. and Borges, L.** (1972) *Clube da Esquina* [Audio Album]. Wikipedia. At: [https://en.wikipedia.org/wiki/Clube_da_Esquina_(album)](https://en.wikipedia.org/wiki/Clube_da_Esquina_%28album%29) (Accessed 18/05/2026).
 * **Nielsen, J.** (1993) *Usability Engineering*. Boston: Academic Press.
 * **Nystrom, R.** (2014) 'Component Pattern', *Game Programming Patterns*. At: [https://gameprogrammingpatterns.com/component.html](https://gameprogrammingpatterns.com/component.html) (Accessed 18/05/2026).
