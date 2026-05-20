@@ -1,7 +1,7 @@
 # Auraline: Interactive Audio-Visual Synthesis
 
 **Developer:** Andrei-David Didu <br>
-**Platform:** macOS (MacBook Air) <br> 
+**Platform:** macOS (MacBook Air), Itch.io <br> 
 **Engine:** Unity + FMOD
 
 ---
@@ -24,3 +24,10 @@ https://github.com/user-attachments/assets/60c8c2ab-89fc-46c7-81ea-6fccdc472091
 ## Documentation & Scripts
 *   [Development Journal](Documents/DevelopmentCommentary.md)
 *   [Scripts](Documents/Scripts)
+
+---
+
+## Playable Build
+
+The project can be played in brwoser on [Itch.io](https://raz8rhd.itch.io/auraline-the-audio-visual-modulation-tool)
+The password is: finalmajorproject
