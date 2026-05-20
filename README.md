@@ -1,7 +1,7 @@
 # Auraline: Interactive Audio-Visual Synthesis
 
 **Developer:** Andrei-David Didu <br>
-**Platform:** macOS (MacBook Air), Itch.io <br> 
+**Platform:** macOS (MacBook Air), Web <br> 
 **Engine:** Unity + FMOD
 
 ---
