@@ -18,6 +18,9 @@ public class AuralineController : MonoBehaviour, IPointerDownHandler
     public Transform[] bars;
     public float waveSpeed = 10f;
     public float smoothSpeed = 12f;
+    #if !UNITY_EDITOR && UNITY_WEBGL
+    private bool _browserAudioUnlocked = false;
+    #endif
 
     [Header("Drawing & Flow")]
     public float surfaceLift = 0.02f;
@@ -99,39 +102,56 @@ public class AuralineController : MonoBehaviour, IPointerDownHandler
 
     // ══════════════════════════════════════════════════════════════════════════
 
-    void Start()
+   void Start()
+{
+    _mainCam = Camera.main;
+    
+    // Prevent tutorial pads from turning on automatically when music starts
+    if (tutorialResetPad != null) tutorialResetPad.canPowerOn = false;
+    if (tutorialNextTrackPad != null) tutorialNextTrackPad.canPowerOn = false;
+    
+    // Bootup Sequence initialization (Visuals happen instantly)
+    _originalAmbientIntensity = RenderSettings.ambientIntensity;
+    RenderSettings.ambientIntensity = 0f;
+
+    if (mainSceneLight != null)
     {
-        _mainCam = Camera.main;
-        
-        // Prevent tutorial pads from turning on automatically when music starts
-        if (tutorialResetPad != null) tutorialResetPad.canPowerOn = false;
-        if (tutorialNextTrackPad != null) tutorialNextTrackPad.canPowerOn = false;
-        
-        // Bootup Sequence initialization
-        _originalAmbientIntensity = RenderSettings.ambientIntensity;
-        RenderSettings.ambientIntensity = 0f;
-
-        if (mainSceneLight != null)
-        {
-            _originalLightIntensity = mainSceneLight.intensity;
-            mainSceneLight.intensity = 0f;
-        }
-
-        if (!fmodEvent.IsNull)
-        {
-            musicInstance = RuntimeManager.CreateInstance(fmodEvent);
-            musicInstance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject));
-        }
-
-        if (screenCursor != null) screenCursor.gameObject.SetActive(false);
-        if (drawingLine != null)
-        {
-            drawingLine.positionCount = 0;
-            drawingLine.enabled = false;
-        }
-
-        SetBarsVisible(false);
+        _originalLightIntensity = mainSceneLight.intensity;
+        mainSceneLight.intensity = 0f;
     }
+
+    // Instantly hide the cursor and drawing line on frame zero to fix the green line bug
+    if (screenCursor != null) screenCursor.gameObject.SetActive(false);
+    if (drawingLine != null)
+    {
+        drawingLine.positionCount = 0;
+        drawingLine.enabled = false;
+    }
+
+    SetBarsVisible(false);
+
+    // Launch the delayed audio setup to prevent WebGL freezing
+    StartCoroutine(InitializeFMODWhenReady());
+}
+
+// Add this Coroutine directly below your Start() method
+System.Collections.IEnumerator InitializeFMODWhenReady()
+{
+    // 1. Pause this specific routine until the browser confirms all audio is in RAM
+    while (!FMODUnity.RuntimeManager.HaveAllBanksLoaded)
+    {
+        yield return null;
+    }
+
+    // 2. NOW it is safe to create your instance!
+    if (!fmodEvent.IsNull)
+    {
+        musicInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        musicInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+    }
+
+    Debug.Log("FMOD Banks loaded and music instance safely created!");
+}
 
     void Update()
     {
@@ -330,12 +350,21 @@ public class AuralineController : MonoBehaviour, IPointerDownHandler
     {
         if (!IsMachineFullyPowered || tutorialState < 2 || _isWaitingForNextTrack) return;
 
-        currentTrackIndex = (currentTrackIndex + 1) % 4;
+        currentTrackIndex = (currentTrackIndex + 1) % 5;
         RuntimeManager.StudioSystem.setParameterByName("TrackSelector", (float)currentTrackIndex);
     }
 
     public void TogglePlayback()
     {
+       #if !UNITY_EDITOR && UNITY_WEBGL
+        if (!_browserAudioUnlocked)
+        {
+            FMODUnity.RuntimeManager.CoreSystem.mixerSuspend();
+            FMODUnity.RuntimeManager.CoreSystem.mixerResume();
+            _browserAudioUnlocked = true; 
+        }
+       #endif
+
         if (!musicInstance.isValid()) return;
 
         // Block interaction while booting up
