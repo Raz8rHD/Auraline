@@ -32,3 +32,5 @@ https://github.com/user-attachments/assets/60c8c2ab-89fc-46c7-81ea-6fccdc472091
 The project can be played in browser on [Itch.io](https://raz8rhd.itch.io/auraline-the-audio-visual-modulation-tool)
 
 The password is: finalmajorproject
+
+To turn on/off camera shake, press F.
