@@ -1,6 +1,7 @@
 ```csharp
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
 
 public class Auraline_ScreenShake : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class Auraline_ScreenShake : MonoBehaviour
 
     [Tooltip("How fast position lerps back to rest.")]
     public float posReturnSpeed = 22f;
+
+    [Header("Toggles")]
+    [Tooltip("Toggle camera shake on/off.")]
+    public bool isShakeEnabled = true;
 
     [Header("FMOD Link")]
     [Tooltip("Drag the AuralineController GameObject here.")]
@@ -62,6 +67,11 @@ public class Auraline_ScreenShake : MonoBehaviour
 
     void Update()
     {
+        if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame)
+        {
+            isShakeEnabled = !isShakeEnabled;
+        }
+
         // Re-register whenever the music instance changes (e.g. after NextTrack)
         if (auralineController != null)
         {
@@ -81,8 +91,11 @@ public class Auraline_ScreenShake : MonoBehaviour
         if (_beatFired)
         {
             _beatFired  = false;
-            _shakeTimer = shakeDuration;
-            transform.localScale = _originalScale * (1f + scalePunch);
+            if (isShakeEnabled)
+            {
+                _shakeTimer = shakeDuration;
+                transform.localScale = _originalScale * (1f + scalePunch);
+            }
         }
 
         // Position shake
