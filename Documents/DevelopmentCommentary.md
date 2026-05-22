@@ -147,6 +147,16 @@ This research was incredibly valuable for calibrating the math behind Auraline's
 
 ---
 
+## GDC Talk
+
+Below is the link to my gdc talk video. I was unable to embed the video here, but by clicking the link you will be redirected to my video.
+
+<a href="https://youtu.be/BphlFDVQ050" target="_blank">
+  <img src="https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg" alt="Watch the video" width="400" />
+</a>
+
+---
+
 ## Implementation
 
 ### Visual Representaion Of Auraline
