@@ -32,6 +32,15 @@ public class Auraline_Knob : MonoBehaviour, IDragHandler, IPointerDownHandler
         if (startX > 180f) startX -= 360f;
 
         volumeValue = Mathf.InverseLerp(minAngle, maxAngle, startX);
+        StartCoroutine(InitializeFMODWhenReady());
+    }
+
+    private System.Collections.IEnumerator InitializeFMODWhenReady()
+    {
+        while (!FMODUnity.RuntimeManager.HaveAllBanksLoaded)
+        {
+            yield return null;
+        }
         SyncToFMOD();
     }
 
